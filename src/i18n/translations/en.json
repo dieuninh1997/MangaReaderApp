@@ -1,0 +1,13 @@
+{
+    "HomeScreen": {
+        "title": "Home",
+        "menuPhanLoai": "Phân loại",
+        "menuBrowser": "Browser",
+        "menuCapNhatMoi": "Cập nhật mới"
+    
+    },
+
+    "WebViewScreen": {
+        "title": "{{title}}"
+    }
+}
