@@ -57,9 +57,9 @@ export class HomeScreen extends PureComponent {
                             style={ styles.swiperContent }
                         >
                             {
-                                images.map((img) =>{
+                                images.map((i,img) =>{
                                     return (
-                                        <View style={ styles.slide }>
+                                        <View key={i} style={ styles.slide }>
                                             <Image style={ styles.slideImage } source={ Images.menu['emoj_smile'] } />
                                         </View>
                                     );

@@ -13,6 +13,6 @@ export default ScaledSheet.create({
 
     label__active: {
         fontWeight: 'bold',
-        color: Colors.info,
+        color: Colors.active,
     },
 });

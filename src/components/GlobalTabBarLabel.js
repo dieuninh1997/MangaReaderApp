@@ -7,9 +7,19 @@ import styles from 'styles/components/GlobalTabBarLabel';
 
 export const GlobalTabBarLabel = (props) => {
     const { routeName, focused } = props;
+    let tabName = '';
+    switch (routeName) {
+        case "HomeScreen":
+            tabName = "Manga";
+            break;
+        case "SettingScreen":
+            tabName = 'Settings';
+            break;
+        default: tabName= routeName;
+    }
     return (
         <Text style={[styles.label, focused ? styles.label__active : null]}>
-            { routeName }
+            { tabName }
         </Text>
     );
 };

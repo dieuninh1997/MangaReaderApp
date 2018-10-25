@@ -8,7 +8,7 @@ import NavigationService, { emitNavigationChanged } from 'services/NavigationSer
 
 
 //Splash
-// import SplashScreen from 'screens/SplashScreen/SplashScreen';
+import SplashScreen from 'screens/SplashScreen/SplashScreen';
 
 //Home
 import HomeScreen from 'screens/HomeScreen/HomeScreen';
@@ -20,6 +20,10 @@ import FollowScreen from 'screens/FollowScreen/FollowScreen';
 //WebView
 import WebViewScreen from 'screens/WebViewScreen/WebViewScreen';
 
+
+//SettingScreen
+import SettingScreen from 'screens/SettingScreen/SettingScreen';
+import LanguageSettingsScreen from 'screens/LanguageSettingsScreen/LanguageSettingsScreen';
 
 //Account
 // import AccountScreen from 'screens/AccountScreen/AccountScreen';
@@ -66,15 +70,20 @@ const transitionConfig = () => {
 
 export const Routes = createStackNavigator(
     {
+        SplashScreen: SplashScreen,
+
         HomeScreen: HomeScreen,
         MangaComponent: MangaComponent,
 
         WebViewScreen: WebViewScreen,
 
         FollowScreen: FollowScreen,
+
+        SettingScreen: SettingScreen,
+        LanguageSettingsScreen: LanguageSettingsScreen,
     },
     {
-        initialRouteName: 'HomeScreen',
+        initialRouteName: 'SplashScreen',
         headerMode: 'none',
         transitionConfig: transitionConfig,
         cardStyle: {

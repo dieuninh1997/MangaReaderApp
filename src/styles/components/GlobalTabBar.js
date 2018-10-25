@@ -5,6 +5,7 @@ import { Colors, FontSizes, Sizes } from 'styles/variables';
 export default ScaledSheet.create({
     container: {
         backgroundColor: Colors.primary,
+      
     },
 
     tabBar: {
@@ -12,6 +13,7 @@ export default ScaledSheet.create({
         borderTopColor: 'rgba(1, 1, 1, 0.1)',
         flexDirection: 'row',
         height: '60@ms',
+        paddingTop: Sizes.s3,
         backgroundColor: Colors.primary,
     },
 

@@ -9,12 +9,12 @@ const crawlChapterImages = (url) => {
         }
     });
     
-    
+    let list=[];    
     // Queue URLs with custom callbacks & parameters
     c.queue([{
         uri: url,
         jQuery: true,
-    
+
         // The global callback won't be called
         callback: function (error, res, done) {
             if(error){
@@ -23,7 +23,9 @@ const crawlChapterImages = (url) => {
                 const $ = res.$;
                 $('.reading-detail img').each(function () {
                     console.log(this.attribs.src)
+                    list.push(this.attribs.src);
                 });;
+                return list;
             }
             done();
         }
@@ -109,43 +111,60 @@ const crawlComicChapters = (url) => {
 // crawlChapterImages('http://www.nettruyen.com/truyen-tranh/tay-du-ky-ngoai-truyen/chap-60/399047')
 
 
+const crawlTruyen = (url, callback) => {
+  var c = new Crawler({
+    maxConnections: 10,
+    // This will be called for each crawled page
+    callback: function (error, res, done) {
+      done();
+    }
+  });
 
+  
+  // Queue URLs with custom callbacks & parameters
+  c.queue([{
+    uri: url,
+    jQuery: true,
 
-const crawlTruyen = (url) => {
-    var c = new Crawler({
-        maxConnections : 10,
-        // This will be called for each crawled page
-        callback : function (error, res, done) {
-            done();
-        }
-    });
-    
-    
-    // Queue URLs with custom callbacks & parameters
-    c.queue([{
-        uri: url,
-        jQuery: true,
-    
-        // The global callback won't be called
-        callback: function (error, res, done) {
-            if(error){
-                console.log(error);
-            }else{
-                const $ = res.$;
-                $('.ModuleContent .items .row .item').each(function () {
-                    const comicTittle = $(this).find('figcaption h3 a').text();
-                    const comicLink = $(this).find('figcaption h3 a').attr('href');
+    // The global callback won't be called
+    callback: function (error, res, done) {
+      if (error) {
+        console.log(error);
+      } else {
+        const $ = res.$;
+        let list = [];
+        $('.ModuleContent .items .row .item').each(function () {
+          const comicTittle = $(this).find('figcaption h3 a').text();
+          const comicLink = $(this).find('figcaption h3 a').attr('href');
+          const comicImage = $(this).find('.image a img').attr('data-original');
+          const comicView = $(this).find('.image span').text().trim().split(" ")[0];
 
-                    console.log('--------------------------------------')
-                    console.log(comicTittle);
-                    console.log(comicLink);
-                    console.log();
-                });;
-            }
-            done();
-        }
-    }]);
+          list.push({
+            comicTittle,
+            comicLink,
+            comicImage,
+            comicView
+          });
+          //callback(list);
+          // console.log('--------------------------------------')
+          //console.log(comicTittle);
+          //console.log(comicLink);
+          //console.log(comicImage);
+          //console.log(comicView);
+          //console.log();
+
+        });
+        //console.log(list);
+        return callback(list);
+      }
+      done();
+    }
+  }]);
+  //return callback(list);
 };
+crawlTruyen('http://www.nettruyen.com/truyen-con-gai', function(response){
+    // Here you have access to your variable
+    console.log(response);
+})
 
-// crawlTruyen('http://www.nettruyen.com/truyen-con-gai');
 

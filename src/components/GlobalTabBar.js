@@ -132,10 +132,10 @@ class GlobalTabBar extends PureComponent {
 
     state = {
         routeName: '',
-        showTabBar: true,
-        shouldShowTabBar: true,
+        showTabBar: false,
+        shouldShowTabBar: false,
         homeMenuFocused: false,
-        // sendMenuFocused: false,
+        settingMenuFocused: false,
         // receiveMenuFocused: false,
     }
 
@@ -150,12 +150,12 @@ class GlobalTabBar extends PureComponent {
         onNavigationChanged((currentState) => {
             const { routeName } = currentState;
 
-            const shouldShowTabBar = (routeName === 'HomeScreen');// || 
+            const shouldShowTabBar = (routeName === 'HomeScreen') ||
                 // (routeName === 'SendScreen') ||
                 // (routeName === 'ReceiveScreen') ||
                 // (routeName === 'WalletDetailScreen') ||
 
-                // (routeName === 'SettingScreen') ||
+                (routeName === 'SettingScreen');//||
                 // (routeName === 'LanguageSettingsScreen') ||
                 // (routeName === 'ListWalletScreen') ||
                 // (routeName === 'WalletManagementScreen') ||
@@ -166,14 +166,14 @@ class GlobalTabBar extends PureComponent {
                 // (routeName === 'ExchangeMain');
 
             const homeMenuFocused = (routeName === 'HomeScreen');
-            // const sendMenuFocused = (routeName === 'SendScreen');
+            const settingMenuFocused = (routeName === 'SettingScreen');
             // const receiveMenuFocused = (routeName === 'ReceiveScreen');
 
             this.setState({
                 routeName: routeName,
                 shouldShowTabBar: shouldShowTabBar,
-                // homeMenuFocused: homeMenuFocused,
-                // sendMenuFocused: sendMenuFocused,
+                homeMenuFocused: homeMenuFocused,
+                settingMenuFocused: settingMenuFocused,
                 // receiveMenuFocused: receiveMenuFocused,
             });
         });
@@ -244,7 +244,7 @@ class GlobalTabBar extends PureComponent {
     render() {
         const { 
             homeMenuFocused, 
-            // sendMenuFocused, 
+            settingMenuFocused, 
             // receiveMenuFocused, 
             showTabBar } = this.state;
 
@@ -269,10 +269,10 @@ class GlobalTabBar extends PureComponent {
                         <TabbarButton routeName="HomeScreen" focused={ homeMenuFocused } />
                     </View>
                     
-                    {/* Send menu */}
-                    {/* <View style={ styles.menuWrapper }>
-                        <TabbarButton routeName="SendScreen" focused={ sendMenuFocused } />
-                    </View> */}
+                    {/* Setting menu */} 
+                     <View style={ styles.menuWrapper }>
+                        <TabbarButton routeName="SettingScreen" focused={ settingMenuFocused } />
+                    </View>
 
                     {/* Receive menu */}
                     {/* <View style={ styles.menuWrapper }>

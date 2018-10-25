@@ -1,6 +1,6 @@
 {
     "HomeScreen": {
-        "title": "Home",
+        "title": "Manga",
         "menuPhanLoai": "Phân loại",
         "menuBrowser": "Browser",
         "menuCapNhatMoi": "Cập nhật mới"
@@ -9,5 +9,19 @@
 
     "WebViewScreen": {
         "title": "{{title}}"
+    },
+
+    "SettingScreen": {
+        "title": "Setting",
+        "manageAccount": "My Account",
+        "languagesSetting": "Languages Setting",
+        "feedback": "Feedback",
+        "aboutUs": "About"
+    },
+
+    "LanguageSettingsScreen": {
+        "title": "Language Setting",
+        "vietnamese": "Vietnamese",
+        "english": "English"
     }
 }

@@ -10,7 +10,8 @@ export const Colors = {
     info: '#FFFFFF',
     danger: '#ff3600',
     link: '#265799',
-    button: '#8c9aff'
+    button: '#8c9aff',
+    active: '#ffe69c'
 };
 
 

@@ -38,15 +38,8 @@ export const GlobalHeader = (props) => {
                     
                 </View>
 
-
                 {/* Right button - Setting */}
                 <View style={ styles.rightButtonContainer }>
-                    {showSearchButton ? (
-                        <TouchableOpacity activeOpacity={ 0.65 } onPress={() => navigate('SearchScreen')} hitSlop={ hitSlop }>
-                            <Feather name="search" style={ styles.search_Icon } />
-                        </TouchableOpacity>
-                    ) : null}
-
                     {showRightButton ? (
                         <TouchableOpacity activeOpacity={ 0.65 } onPress={() => navigate('SettingScreen')} hitSlop={ hitSlop }>
                             <EvilIcons name="navicon" style={ styles.rightButton_Icon } />

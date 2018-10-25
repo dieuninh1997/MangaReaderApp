@@ -15,8 +15,8 @@ export const GlobalTabBarIcon = (props) => {
             iconName = 'md-home';
             break;
 
-        case 'Follow'://theo doi
-            iconName = 'ios-heart';
+        case 'SettingScreen'://setting
+            iconName = 'ios-settings';
             break;
 
         case 'Account'://toi

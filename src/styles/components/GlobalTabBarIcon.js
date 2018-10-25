@@ -10,6 +10,6 @@ export default ScaledSheet.create({
     },
 
     icon__active: {
-        color: Colors.info,
+        color: Colors.active,
     },
 });
