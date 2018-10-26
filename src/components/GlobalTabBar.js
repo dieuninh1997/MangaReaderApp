@@ -137,6 +137,7 @@ class GlobalTabBar extends PureComponent {
         homeMenuFocused: false,
         settingMenuFocused: false,
         searchMenuFocused: false,
+        followMenuFocused: false,
     }
 
     constructor(props) {
@@ -152,7 +153,7 @@ class GlobalTabBar extends PureComponent {
 
             const shouldShowTabBar = (routeName === 'HomeScreen') ||
                 (routeName === 'SearchScreen') ||
-                // (routeName === 'ReceiveScreen') ||
+                (routeName === 'FollowMain') ||
                 // (routeName === 'WalletDetailScreen') ||
 
                 (routeName === 'SettingScreen');//||
@@ -168,6 +169,7 @@ class GlobalTabBar extends PureComponent {
             const homeMenuFocused = (routeName === 'HomeScreen');
             const settingMenuFocused = (routeName === 'SettingScreen');
             const searchMenuFocused = (routeName === 'SearchScreen');
+            const followMenuFocused = (routeName === 'FollowMain');
 
             this.setState({
                 routeName: routeName,
@@ -175,6 +177,7 @@ class GlobalTabBar extends PureComponent {
                 homeMenuFocused: homeMenuFocused,
                 settingMenuFocused: settingMenuFocused,
                 searchMenuFocused: searchMenuFocused,
+                followMenuFocused: followMenuFocused,
             });
         });
     }
@@ -246,6 +249,7 @@ class GlobalTabBar extends PureComponent {
             homeMenuFocused, 
             settingMenuFocused, 
             searchMenuFocused,
+            followMenuFocused,
             showTabBar } = this.state;
 
         if (!showTabBar) {
@@ -267,6 +271,11 @@ class GlobalTabBar extends PureComponent {
                     {/* Home menu */}
                     <View style={ styles.menuWrapper }>
                         <TabbarButton routeName="HomeScreen" focused={ homeMenuFocused } />
+                    </View>
+
+                     {/* Follow menu */}
+                     <View style={ styles.menuWrapper }>
+                        <TabbarButton routeName="FollowMain" focused={ followMenuFocused } />
                     </View>
                     
                     {/* Setting menu */} 

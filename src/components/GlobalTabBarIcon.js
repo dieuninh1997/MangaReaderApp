@@ -14,7 +14,9 @@ export const GlobalTabBarIcon = (props) => {
         case 'HomeScreen'://truyen tranh
             iconName = 'md-home';
             break;
-
+        case 'FollowMain'://follow
+            iconName = 'md-list';
+            break;
         case 'SettingScreen'://setting
             iconName = 'ios-settings';
             break;
@@ -25,6 +27,7 @@ export const GlobalTabBarIcon = (props) => {
         case 'SearchScreen': //search
             iconName = 'ios-search';
             break;
+    
     };
 
     return (

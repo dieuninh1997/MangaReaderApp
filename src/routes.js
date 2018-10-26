@@ -5,6 +5,7 @@ import { createStackNavigator, createTabNavigator } from 'react-navigation';
 import { connect } from 'react-redux';
 
 import NavigationService, { emitNavigationChanged } from 'services/NavigationService';
+import GlobalFollowTabBar from 'components/GlobalFollowTabBar';
 
 
 //Splash
@@ -16,6 +17,8 @@ import MangaComponent from 'screens/HomeScreen/MangaComponent';
 
 //Follow
 import FollowScreen from 'screens/FollowScreen/FollowScreen';
+import HistoryScreen from 'screens/HistoryScreen/HistoryScreen';
+import DownloadScreen from 'screens/DownloadScreen/DownloadScreen';
 
 //WebView
 import WebViewScreen from 'screens/WebViewScreen/WebViewScreen';
@@ -28,8 +31,6 @@ import LanguageSettingsScreen from 'screens/LanguageSettingsScreen/LanguageSetti
 //Account
 // import AccountScreen from 'screens/AccountScreen/AccountScreen';
 
-//Setting
-// import SettingScreen from 'screens/SettingScreen/SettingScreen';
 
 //Search
 import SearchScreen from 'screens/SearchScreen/SearchScreen';
@@ -77,7 +78,18 @@ export const Routes = createStackNavigator(
 
         WebViewScreen: WebViewScreen,
 
-        FollowScreen: FollowScreen,
+        //Follow, History, Download
+        FollowMain: createTabNavigator({
+            FollowScreen: FollowScreen,
+            HistoryScreen: HistoryScreen,
+            DownloadScreen: DownloadScreen,
+
+        }, {
+            initialRouteName: 'FollowScreen',
+            tabBarComponent: GlobalFollowTabBar,
+            tabBarPosition: 'top',
+            animationEnabled: true,
+        }), 
 
         SettingScreen: SettingScreen,
         LanguageSettingsScreen: LanguageSettingsScreen,

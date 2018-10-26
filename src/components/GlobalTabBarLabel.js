@@ -12,6 +12,9 @@ export const GlobalTabBarLabel = (props) => {
         case "HomeScreen":
             tabName = "Manga";
             break;
+        case "FollowMain":
+            tabName = "Follow";
+            break;
         case "SettingScreen":
             tabName = 'Settings';
             break;
