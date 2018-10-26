@@ -32,7 +32,7 @@ import LanguageSettingsScreen from 'screens/LanguageSettingsScreen/LanguageSetti
 // import SettingScreen from 'screens/SettingScreen/SettingScreen';
 
 //Search
-// import SearchScreen from 'screens/SearchScreen/SearchScreen';
+import SearchScreen from 'screens/SearchScreen/SearchScreen';
 
 
 const transitionConfig = () => {
@@ -81,6 +81,9 @@ export const Routes = createStackNavigator(
 
         SettingScreen: SettingScreen,
         LanguageSettingsScreen: LanguageSettingsScreen,
+
+
+        SearchScreen,
     },
     {
         initialRouteName: 'SplashScreen',

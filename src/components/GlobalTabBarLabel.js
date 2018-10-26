@@ -15,6 +15,9 @@ export const GlobalTabBarLabel = (props) => {
         case "SettingScreen":
             tabName = 'Settings';
             break;
+        case "SearchScreen":
+            tabName = 'Search';
+            break;
         default: tabName= routeName;
     }
     return (

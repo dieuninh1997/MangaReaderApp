@@ -136,7 +136,7 @@ class GlobalTabBar extends PureComponent {
         shouldShowTabBar: false,
         homeMenuFocused: false,
         settingMenuFocused: false,
-        // receiveMenuFocused: false,
+        searchMenuFocused: false,
     }
 
     constructor(props) {
@@ -151,7 +151,7 @@ class GlobalTabBar extends PureComponent {
             const { routeName } = currentState;
 
             const shouldShowTabBar = (routeName === 'HomeScreen') ||
-                // (routeName === 'SendScreen') ||
+                (routeName === 'SearchScreen') ||
                 // (routeName === 'ReceiveScreen') ||
                 // (routeName === 'WalletDetailScreen') ||
 
@@ -167,14 +167,14 @@ class GlobalTabBar extends PureComponent {
 
             const homeMenuFocused = (routeName === 'HomeScreen');
             const settingMenuFocused = (routeName === 'SettingScreen');
-            // const receiveMenuFocused = (routeName === 'ReceiveScreen');
+            const searchMenuFocused = (routeName === 'SearchScreen');
 
             this.setState({
                 routeName: routeName,
                 shouldShowTabBar: shouldShowTabBar,
                 homeMenuFocused: homeMenuFocused,
                 settingMenuFocused: settingMenuFocused,
-                // receiveMenuFocused: receiveMenuFocused,
+                searchMenuFocused: searchMenuFocused,
             });
         });
     }
@@ -245,7 +245,7 @@ class GlobalTabBar extends PureComponent {
         const { 
             homeMenuFocused, 
             settingMenuFocused, 
-            // receiveMenuFocused, 
+            searchMenuFocused,
             showTabBar } = this.state;
 
         if (!showTabBar) {
@@ -274,10 +274,10 @@ class GlobalTabBar extends PureComponent {
                         <TabbarButton routeName="SettingScreen" focused={ settingMenuFocused } />
                     </View>
 
-                    {/* Receive menu */}
-                    {/* <View style={ styles.menuWrapper }>
-                        <TabbarButton routeName="ReceiveScreen" focused={ receiveMenuFocused } />
-                    </View> */}
+                    {/* Search menu */}
+                    <View style={ styles.menuWrapper }>
+                        <TabbarButton routeName="SearchScreen" focused={ searchMenuFocused } />
+                    </View>
                 </Animated.View>
             </SafeAreaView>
         );

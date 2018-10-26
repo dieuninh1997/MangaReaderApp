@@ -23,6 +23,7 @@ export default ScaledSheet.create({
     titleTextStyle: {
         fontSize: FontSizes.p,
         color: Colors.info,
+        fontWeight: 'bold',
     },
 
     leftButton_Icon: {

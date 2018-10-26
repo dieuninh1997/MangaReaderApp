@@ -19,35 +19,20 @@ export default ScaledSheet.create({
         backgroundColor: Colors.info,
     },
 
-    swiperContainer: {
-        backgroundColor: Colors.lightenPrimary,
-        height: height * 0.3,
-        margin: Sizes.s2,
-        padding: Sizes.s2,
-        borderRadius: Sizes.s1,
-        flex: 1,
-    },
-
-    swiperContent: {
-
-    },
-
-    slide: {
-
-    },
-
-    slideImage: {
-
+    separator: {
+        height: Sizes.s2,
+        backgroundColor: Colors.lightBackground,
     },
 
     menuContainer: {
         flexDirection: 'row',
         backgroundColor: Colors.info,
-        height: 100,
+        height: '100@ms',
         width: width,
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingHorizontal: Sizes.s2,
+        marginVertical: Sizes.s2,
     },
 
     menuButtonContainer: {
@@ -58,6 +43,32 @@ export default ScaledSheet.create({
         width: width*0.3,
     },
 
+    menuImageContainer: {
+        width: '40@ms',
+        height: '40@ms',
+        borderRadius: Sizes.s4,
+        backgroundColor: Colors.info,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    menuBrower: {
+        backgroundColor: '#faa6a6',
+    },
+
+    menuPhanLoai: {
+        backgroundColor: '#fbd178',
+    },
+
+    menuCapNhatMoi: {
+        backgroundColor: '#66e9fb',
+    },
+
+    menuTitle: {
+        fontSize: FontSizes.small,
+        color: Colors.info,
+    },
+
     menuImage: {
         width: IconSizes.extraSmall,
         height: IconSizes.extraSmall,
@@ -65,6 +76,38 @@ export default ScaledSheet.create({
 
     listManagaContainer: {
         flex: 1,
-    }
+    },
 
+    listTruyenConGaiThichContainer: {
+        paddingVertical: Sizes.s3,
+        alignItems: 'center',
+    },
+
+    title_truyenConGaiThich: {
+        fontSize: FontSizes.p,
+        color: Colors.darkText,
+    },
+
+    truyenContainer: {
+        width: width*0.3,
+        height: height*0.3,
+        margin: 3,
+    },
+
+    truyenImageContainer: {
+
+    },
+
+    truyenImage: {
+
+    },
+
+    truyenName: {
+        fontSize: FontSizes.small,
+        color: Colors.darkText,
+    },
+
+    list: {
+        flexDirection: 'row',
+    }
 });

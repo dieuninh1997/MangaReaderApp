@@ -3,7 +3,8 @@
         "title": "Manga",
         "menuPhanLoai": "Phân loại",
         "menuBrowser": "Browser",
-        "menuCapNhatMoi": "Cập nhật mới"
+        "menuCapNhatMoi": "Cập nhật mới",
+        "title_truyenConGaiThich": "Truyện con gái thích"
     
     },
 
@@ -23,5 +24,11 @@
         "title": "Language Setting",
         "vietnamese": "Vietnamese",
         "english": "English"
+    },
+
+    "SearchScreen": {
+        "title": "Search",
+        "searchButton": "Search",
+        "searchHistory": "Lịch sử tìm kiếm"
     }
 }

@@ -22,6 +22,9 @@ export const GlobalTabBarIcon = (props) => {
         case 'Account'://toi
             iconName = 'ios-contact';
             break;
+        case 'SearchScreen': //search
+            iconName = 'ios-search';
+            break;
     };
 
     return (

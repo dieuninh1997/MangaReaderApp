@@ -11,7 +11,14 @@ export const Colors = {
     danger: '#ff3600',
     link: '#265799',
     button: '#8c9aff',
-    active: '#ffe69c'
+    active: '#ffe69c',
+
+    //mau chu
+    lightText: '#6b6b6b',
+    darkText: '#191919',
+
+    //mau nen
+    lightBackground: '#f2f2f2',
 };
 
 

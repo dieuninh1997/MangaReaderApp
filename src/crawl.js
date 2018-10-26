@@ -162,9 +162,6 @@ const crawlTruyen = (url, callback) => {
   }]);
   //return callback(list);
 };
-crawlTruyen('http://www.nettruyen.com/truyen-con-gai', function(response){
-    // Here you have access to your variable
-    console.log(response);
-})
 
 
+export default crawlTruyen;
