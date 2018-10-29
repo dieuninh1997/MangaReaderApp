@@ -10,6 +10,8 @@ import GlobalLoc from 'components/GlobalLoc';
 import GlobalHeader from 'components/GlobalHeader';
 import { navigate } from 'services/NavigationService';
 import Images from 'assets/images';
+import I18n from 'i18n';
+
 
 import styles from 'styles/screens/SearchScreen/SearchScreen';
 
@@ -36,7 +38,7 @@ export class SearchScreen extends PureComponent {
                 {/* input search text */}
                 <View style={ styles.inputContainer }>
                     <TextInput
-                        placeholder="Nhập từ khóa"
+                        placeholder={ I18n.t('SearchScreen.hintInputSearch') }
                         style={ styles.inputSearchText }
                         underlineColorAndroid="rgba(0, 0, 0, 0)"
                     />

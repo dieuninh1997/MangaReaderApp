@@ -19,6 +19,11 @@ export const Colors = {
 
     //mau nen
     lightBackground: '#f2f2f2',
+
+    //mau sac
+    black: '#000000',
+    pink: '#ffc4b2',
+    gray: '#c4bec0'
 };
 
 

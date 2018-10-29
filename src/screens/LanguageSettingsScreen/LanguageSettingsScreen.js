@@ -7,11 +7,17 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import GlobalContainer from 'components/GlobalContainer';
 import GlobalLoc from 'components/GlobalLoc';
 import GlobalOption from 'components/GlobalOption';
+import GlobalHeader from 'components/GlobalHeader';
 
 import styles from 'styles/screens/LanguageSettingsScreen/LanguageSettingsScreen';
 
 
 export class LanguageSettingsScreen extends PureComponent {
+
+    constructor(props){
+        super(props);
+        this.rightArrowIcon = this.rightArrowIcon.bind(this);
+    }
 
     rightArrowIcon(locale) {
         const { locale: currentLocale } = this.props;
@@ -28,31 +34,28 @@ export class LanguageSettingsScreen extends PureComponent {
         return (
             <GlobalContainer>
                 {/* title */}
-                <GlobalContainer.Header showLeftButton={ true } />
-                <GlobalLoc style={ styles.title } locKey="LanguageSettingsScreen.title" />
+                <GlobalHeader showLeftButton={ true } locKey="LanguageSettingsScreen.title" />
               
-                <GlobalContainer.Content>
-                    {/* english */}
-                    <GlobalOption 
-                        showSeparator={ true } 
-                        rightComponent={ this.rightArrowIcon('en') } 
-                        onPress={() => {
-                            this.props.changeLanguage('en');
-                        }}
-                    >
-                        <GlobalLoc locKey="LanguageSettingsScreen.english" />
-                    </GlobalOption>
+                {/* english */}
+                <GlobalOption 
+                    showSeparator={ true } 
+                    rightComponent={ this.rightArrowIcon('en') } 
+                    onPress={() => {
+                        this.props.changeLanguage('en');
+                    }}
+                >
+                    <GlobalLoc locKey="LanguageSettingsScreen.english" />
+                </GlobalOption>
 
-                    {/* japanese */}
-                    <GlobalOption 
-                        rightComponent={ this.rightArrowIcon('vn') } 
-                        onPress={() => {
-                            this.props.changeLanguage('vn');
-                        }}
-                    >
-                        <GlobalLoc locKey="LanguageSettingsScreen.vietnamese" />
-                    </GlobalOption>
-                </GlobalContainer.Content>
+                {/* japanese */}
+                <GlobalOption 
+                    rightComponent={ this.rightArrowIcon('vn') } 
+                    onPress={() => {
+                        this.props.changeLanguage('vn');
+                    }}
+                >
+                    <GlobalLoc locKey="LanguageSettingsScreen.vietnamese" />
+                </GlobalOption>
             </GlobalContainer>
         );
     }

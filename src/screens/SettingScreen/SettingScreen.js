@@ -39,12 +39,12 @@ export class SettingScreen extends PureComponent {
     }
 
     goToLanguageSettings() {
-        navigate('LanguageSettingScreen');
+        navigate('LanguageSettingsScreen');
 
     }
 
     goToFeedbackScreen() {
-
+        navigate('FeedbackScreen');
     }
 
     goToAboutUsScreen() {

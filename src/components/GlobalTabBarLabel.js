@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text } from 'react-native';
 import PropTypes from 'prop-types';
+import I18n from 'i18n';
 
 import styles from 'styles/components/GlobalTabBarLabel';
 
@@ -10,16 +11,16 @@ export const GlobalTabBarLabel = (props) => {
     let tabName = '';
     switch (routeName) {
         case "HomeScreen":
-            tabName = "Manga";
+            tabName = I18n.t('GlobalTabBarLabel.Manga');
             break;
         case "FollowMain":
-            tabName = "Follow";
+            tabName = I18n.t('GlobalTabBarLabel.Follow');
             break;
         case "SettingScreen":
-            tabName = 'Settings';
+            tabName = I18n.t('GlobalTabBarLabel.Settings');
             break;
         case "SearchScreen":
-            tabName = 'Search';
+            tabName = I18n.t('GlobalTabBarLabel.Search');
             break;
         default: tabName= routeName;
     }

@@ -1,9 +1,56 @@
 {
     "HomeScreen": {
-        "title": "Home",
+        "title": "Truyện tranh",
         "menuPhanLoai": "Phân loại",
-        "menuBangXepHang": "Bảng xếp hạng",
-        "menuCapNhatMoi": "Cập nhật mới"
+        "menuBrowser": "Brower",
+        "menuCapNhatMoi": "Cập nhật mới",
+        "title_truyenConGaiThich": "Truyện con gái thích"
     
+    },
+
+    "WebViewScreen": {
+        "title": "{{title}}"
+    },
+
+    "SettingScreen": {
+        "title": "Cài đặt",
+        "manageAccount": "Tôi",
+        "languagesSetting": "Cài đặt ngôn ngữ",
+        "feedback": "Phản hồi",
+        "aboutUs": "Thông tin ứng dụng"
+    },
+
+    "LanguageSettingsScreen": {
+        "title": "Cài đặt ngôn ngữ",
+        "vietnamese": "Tiếng Việt",
+        "english": "Tiếng Anh"
+    },
+
+    "SearchScreen": {
+        "title": "Tìm kiếm",
+        "searchButton": "Tìm",
+        "searchHistory": "Lịch sử tìm kiếm",
+        "hintInputSearch": "Nhập từ khóa"
+    },
+
+    "GlobalFollowTabBar": {
+        "FollowTab": "Theo dõi",
+        "FollowHistoryTab": "Lịch sử",
+        "FollowDownloadTab": "Tải truyện"
+    },
+
+    "GlobalTabBarLabel": {
+        "Manga": "Truyện tranh",
+        "Follow": "Theo dõi",
+        "Settings": "Cài đặt",
+        "Search": "Tìm kiếm"
+    },
+
+    "FeedbackScreen": {
+        "title": "Phản hồi",
+        "feedbackGuide": "Phản hồi của bạn là động lực cho chúng tôi tiến bộ. Nếu bạn phát hiện nội dung không phù hợp hoặc hành vi vi phạm bản quyền, xin hãy báo xấu cho chúng tôi.",
+        "hintInputFeedback": "Hãy viết cảm nghĩ, gợi ý hay kiến nghị của bạn vào đây",
+        "send": "Gửi phản hồi"
     }
+
 }

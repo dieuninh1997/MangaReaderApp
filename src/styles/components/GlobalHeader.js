@@ -15,7 +15,7 @@ export default ScaledSheet.create({
     },
 
     separator: {
-        flex: 1,
+        flex: 2,
         alignItems: 'center',
         justifyContent: 'center',
     },

@@ -17,12 +17,12 @@ export default ScaledSheet.create({
     },
     arrow: {
         fontSize: FontSizes.h4,
-        color: Colors.secondary,
+        color: Colors.black,
     },
     icon: {
         fontSize: FontSizes.h4,
         marginRight: Sizes.s3,
-        color: Colors.secondary,
+        color: Colors.black,
         position: 'relative',
         top: -verticalScale(1),
     },

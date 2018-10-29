@@ -5,6 +5,6 @@ import { Colors, FontSizes, Sizes } from 'styles/variables';
 export default ScaledSheet.create({
     text: {
         fontSize: FontSizes.small,
-        color: Colors.secondary,
+        color: Colors.black,
     },
 });

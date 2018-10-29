@@ -1,10 +1,10 @@
 {
     "HomeScreen": {
         "title": "Manga",
-        "menuPhanLoai": "Phân loại",
+        "menuPhanLoai": "Classify",
         "menuBrowser": "Browser",
-        "menuCapNhatMoi": "Cập nhật mới",
-        "title_truyenConGaiThich": "Truyện con gái thích"
+        "menuCapNhatMoi": "New update",
+        "title_truyenConGaiThich": "Girl Manga"
     
     },
 
@@ -29,13 +29,28 @@
     "SearchScreen": {
         "title": "Search",
         "searchButton": "Search",
-        "searchHistory": "Lịch sử tìm kiếm"
+        "searchHistory": "Searching History",
+        "hintInputSearch": "Enter keyword"
     },
 
     "GlobalFollowTabBar": {
         "FollowTab": "Follow",
         "FollowHistoryTab": "History",
         "FollowDownloadTab": "Download"
+    },
+
+    "GlobalTabBarLabel": {
+        "Manga": "Manga",
+        "Follow": "Follow",
+        "Settings": "Settings",
+        "Search": "Search"
+    },
+
+    "FeedbackScreen": {
+        "title": "Feedback",
+        "feedbackGuide": "Phản hồi của bạn là động lực cho chúng tôi tiến bộ. Nếu bạn phát hiện nội dung không phù hợp hoặc hành vi vi phạm bản quyền, xin hãy báo xấu cho chúng tôi.",
+        "hintInputFeedback": "Please enter your feedback at here",
+        "send": "Send feedback"
     }
 
 }

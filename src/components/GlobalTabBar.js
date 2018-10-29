@@ -278,15 +278,17 @@ class GlobalTabBar extends PureComponent {
                         <TabbarButton routeName="FollowMain" focused={ followMenuFocused } />
                     </View>
                     
+                    {/* Search menu */}
+                    <View style={ styles.menuWrapper }>
+                        <TabbarButton routeName="SearchScreen" focused={ searchMenuFocused } />
+                    </View>
+
                     {/* Setting menu */} 
                      <View style={ styles.menuWrapper }>
                         <TabbarButton routeName="SettingScreen" focused={ settingMenuFocused } />
                     </View>
 
-                    {/* Search menu */}
-                    <View style={ styles.menuWrapper }>
-                        <TabbarButton routeName="SearchScreen" focused={ searchMenuFocused } />
-                    </View>
+                    
                 </Animated.View>
             </SafeAreaView>
         );

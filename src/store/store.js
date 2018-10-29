@@ -9,7 +9,10 @@ import globalReducer from './global';
 
 const reducers = combineReducers({
     global: globalReducer,
-    i18n,
+    i18n: persistReducer({
+        key: 'i18n',
+        storage: storage,
+    }, i18n),
 });
 
 const middleWares = [thunk];
