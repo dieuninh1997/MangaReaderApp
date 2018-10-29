@@ -42,7 +42,7 @@ export default ScaledSheet.create({
 
     tabBar_Label: {
         color: Colors.info,
-        fontSize: FontSizes.p,
+        fontSize: FontSizes.small,
     },
 
     tabBar_Label__active: {
