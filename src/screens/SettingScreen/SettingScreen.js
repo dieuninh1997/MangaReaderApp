@@ -48,7 +48,7 @@ export class SettingScreen extends PureComponent {
     }
 
     goToAboutUsScreen() {
-
+        navigate('AboutUsScreen');
     }
 
     render() {

@@ -28,6 +28,7 @@ import WebViewScreen from 'screens/WebViewScreen/WebViewScreen';
 import SettingScreen from 'screens/SettingScreen/SettingScreen';
 import LanguageSettingsScreen from 'screens/LanguageSettingsScreen/LanguageSettingsScreen';
 import FeedbackScreen from 'screens/FeedbackScreen/FeedbackScreen';
+import AboutUsScreen from 'screens/AboutUsScreen/AboutUsScreen';
 
 //Account
 // import AccountScreen from 'screens/AccountScreen/AccountScreen';
@@ -95,6 +96,7 @@ export const Routes = createStackNavigator(
         SettingScreen: SettingScreen,
         LanguageSettingsScreen: LanguageSettingsScreen,
         FeedbackScreen: FeedbackScreen, 
+        AboutUsScreen: AboutUsScreen,
 
         SearchScreen,
     },

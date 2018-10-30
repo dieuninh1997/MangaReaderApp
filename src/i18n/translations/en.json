@@ -51,6 +51,10 @@
         "feedbackGuide": "Phản hồi của bạn là động lực cho chúng tôi tiến bộ. Nếu bạn phát hiện nội dung không phù hợp hoặc hành vi vi phạm bản quyền, xin hãy báo xấu cho chúng tôi.",
         "hintInputFeedback": "Please enter your feedback at here",
         "send": "Send feedback"
+    },
+
+    "AboutUsScreen": {
+        "title": "About us"
     }
 
 }
