@@ -15,6 +15,9 @@ import SplashScreen from 'screens/SplashScreen/SplashScreen';
 import HomeScreen from 'screens/HomeScreen/HomeScreen';
 import MangaComponent from 'screens/HomeScreen/MangaComponent';
 
+//Manga
+import MangaScreen from 'screens/MangaScreen/MangaScreen';
+
 //Follow
 import FollowScreen from 'screens/FollowScreen/FollowScreen';
 import HistoryScreen from 'screens/HistoryScreen/HistoryScreen';
@@ -99,9 +102,11 @@ export const Routes = createStackNavigator(
         AboutUsScreen: AboutUsScreen,
 
         SearchScreen,
+
+        MangaScreen: MangaScreen,
     },
     {
-        initialRouteName: 'SplashScreen',
+        initialRouteName: 'MangaScreen',
         headerMode: 'none',
         transitionConfig: transitionConfig,
         cardStyle: {

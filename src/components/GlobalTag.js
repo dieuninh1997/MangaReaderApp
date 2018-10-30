@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PureComponent from 'pure-component';
-import { View, TouchableHighlight } from 'react-native';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
 import styles from 'styles/components/GlobalTag';
@@ -13,9 +13,9 @@ export class GlobalTag extends PureComponent {
        
         return (
             <View style={ styles.container }>
-                {data.map((tag) => {
+                {data.map((tag, index) => {
                     return (
-                        <View style={ styles.tagContainer }>
+                        <View key={index} style={ styles.tagContainer }>
                             <Text style={ styles.tagText }>{tag}</Text>
                         </View>
                     );

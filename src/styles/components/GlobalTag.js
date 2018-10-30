@@ -4,20 +4,22 @@ import { Colors, FontSizes, Sizes } from 'styles/variables';
 
 export default ScaledSheet.create({
     container: {
-        padding: Sizes.s1,
         flexDirection: 'row',
     },
 
     tagContainer: {
-        flex: 1,
         borderRadius: Sizes.s1,
         borderWidth: 1,
-        borderColor: Colors.lightText,
-        marginHorizontal: Sizes.s2,
+        borderColor: Colors.lightGray,
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingVertical: '2@ms',
+        paddingHorizontal: Sizes.s1,
+        marginRight: Sizes.s2,
     },
 
     tagText: {
         fontSize: FontSizes.extraSmall,
-        color: Colors.lightText,
+        color: Colors.lightGray,
     }
 });

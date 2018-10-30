@@ -23,7 +23,8 @@ export const Colors = {
     //mau sac
     black: '#000000',
     pink: '#ffc4b2',
-    gray: '#c4bec0'
+    gray: '#c4bec0',
+    lightGray: '#bab8b8'
 };
 
 

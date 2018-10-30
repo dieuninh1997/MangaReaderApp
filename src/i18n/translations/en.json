@@ -55,6 +55,12 @@
 
     "AboutUsScreen": {
         "title": "About us"
+    },
+
+    "MangaScreen": {
+        "autherName": "Auther: {{name}}",
+        "translaterName": "Translater: {{name}}",
+        "views": "{{number}} times",
     }
 
 }

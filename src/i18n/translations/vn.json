@@ -55,6 +55,12 @@
 
     "AboutUsScreen": {
         "title": "Thông tin ứng dụng"
+    },
+
+    "MangaScreen": {
+        "autherName": "Tác giả: {{name}}",
+        "translaterName": "Dịch giả: {{name}}",
+        "views": "{{number}} lượt đọc"
     }
 
 }
