@@ -7,13 +7,18 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import GlobalContainer from 'components/GlobalContainer';
 import GlobalLoc from 'components/GlobalLoc';
 import { navigate } from 'services/NavigationService';
-
+import { CrawlerData } from './../../CrawlerData';
 
 
 import styles from 'styles/screens/HomeScreen/MangaComponent';
 
 export class MangaComponent extends PureComponent {
     render() {
+        let data = new CrawlerData();
+        data.getTruyen("http://www.nettruyen.com").then(data=>{
+            console.log(data);
+        });
+
         return(
             <GlobalContainer>
                 {/* title */}
@@ -27,6 +32,7 @@ export class MangaComponent extends PureComponent {
                 <View>
                     {
                         
+
                     }
                 </View>
             </GlobalContainer>

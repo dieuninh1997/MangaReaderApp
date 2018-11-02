@@ -60,7 +60,7 @@
     "MangaScreen": {
         "autherName": "Auther: {{name}}",
         "translaterName": "Translater: {{name}}",
-        "views": "{{number}} times",
+        "views": "{{number}} times"
     }
 
 }
