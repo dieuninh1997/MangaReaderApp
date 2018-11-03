@@ -1,7 +1,76 @@
 var Crawler = require("crawler");
-export class CrawlerData {
+class CrawlerData {
     constructor(url){
         this.url  = url;
+    }
+
+    async getChapters (url) {
+        var c = new Crawler({
+            maxConnections : 10,
+            // This will be called for each crawled page
+            callback : function (error, res, done) {
+                done();
+            }
+        });
+        
+        return new Promise((resolve,reject)=>{
+            // Queue URLs with custom callbacks & parameters
+            c.queue([{
+                uri: url,
+                jQuery: true,
+            
+                // The global callback won't be called
+                callback: function (error, res, done) {
+                    if(error){
+                        console.log(error);
+                    } else{
+                        const $ = res.$;
+                        let chapters = [];
+                        
+                        const infoImage = $('.detail-info .col-image img').attr('src') 
+                        const infoName = $('.detail-info .col-image img').attr('alt') 
+                        const infoOtherName = $('.detail-info .col-info .othername h2').text(); 
+                        const infoAuthor = $('.detail-info .col-info .author a').text()
+                        const infoStatus = $('.detail-info .col-info .status .col-xs-8').text();
+                        const infoKind = $('.detail-info .col-info .kind .col-xs-8').text()
+                        const infoView = $('.detail-info .row p').text().split("Lượt xem")[1].trim();      
+
+                        chapters.push({
+                            infoImage,
+                            infoName,
+                            infoOtherName,
+                            infoAuthor,
+                            infoKind,
+                            infoView
+                        });
+
+
+                        $('.list-chapter nav ul li').each(function () {
+                            const comicChapter = $(this).find('.chapter a').text();
+                            const comicChapterLink = $(this).find('.chapter a').attr('href');
+                            const comicDateUpdate = $(this).find('.col-xs-4').text();
+                            const comicView = $(this).find('.col-xs-3').text();
+                    
+                            // console.log('--------------------------------------')
+                            // console.log(comicChapter);
+                            // console.log(comicChapterLink);
+                            // console.log(comicDateUpdate);
+                            // console.log(comicView);
+                            // console.log();
+
+                            chapters.push({
+                                comicChapter,
+                                comicChapterLink,
+                                comicDateUpdate,
+                                comicView
+                            });
+                            resolve(chapters);
+                        });;
+                    }
+                    done();
+                }
+            }]);
+        });
     }
 
     async getTruyen(url){
@@ -47,7 +116,11 @@ export class CrawlerData {
     }
 }
 
-
+let data = new CrawlerData();
+data.getChapters("http://www.nettruyen.com/truyen-tranh/nguoi-di-san").then(data=>{console.log(data)});
+// data.getTruyen("http://www.nettruyen.com/tim-truyen/viet-nam").then(data=>{
+//     console.log(data);
+// });
 
 // const crawlChapterImages = (url) => {
 //     var c = new Crawler({
@@ -119,40 +192,7 @@ export class CrawlerData {
 // };
 
 
-// const crawlComicChapters = (url) => {
-//     var c = new Crawler({
-//         maxConnections : 10,
-//         // This will be called for each crawled page
-//         callback : function (error, res, done) {
-//             done();
-//         }
-//     });
-    
-    
-//     // Queue URLs with custom callbacks & parameters
-//     c.queue([{
-//         uri: url,
-//         jQuery: true,
-    
-//         // The global callback won't be called
-//         callback: function (error, res, done) {
-//             if(error){
-//                 console.log(error);
-//             } else{
-//                 const $ = res.$;
-//                 $('.list-chapter nav ul li').each(function () {
-//                     const comicChapter = $(this).find('.chapter a').text();
-//                     const comicChapterLink = $(this).find('.chapter a').attr('href');
 
-//                     console.log('--------------------------------------')
-//                     console.log(comicChapter);
-//                     console.log(comicChapterLink);
-//                     console.log();
-//                 });;
-//             }
-//             done();
-//         }
-//     }]);
 // };
 
 // // crawlSearchResults('tay du ky')

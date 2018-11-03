@@ -10,7 +10,7 @@ import GlobalLoc from 'components/GlobalLoc';
 import GlobalHeader from 'components/GlobalHeader';
 import { navigate } from 'services/NavigationService';
 import Images from 'assets/images';
-// import crawlTruyen from './../../crawl.js';
+import  MangaList  from './MangaList';
 
 import styles from 'styles/screens/HomeScreen/HomeScreen';
 
@@ -87,27 +87,10 @@ export class HomeScreen extends PureComponent {
                             <GlobalLoc locKey="HomeScreen.title_truyenConGaiThich" style={ styles.title_truyenConGaiThich }/>
                             <View style={ styles.list }>
                             {
-
-                                // crawlTruyen('http://www.nettruyen.com/truyen-con-gai', function(response){
-                                // // Here you have access to your variable
-                                //     console.log(response);
-                                //     response.map((truyen) => {
-                                //         <TouchableWithoutFeedback 
-                                //             onPress={ () => this.goToDetailScreen(truyen) }
-                                //             style={ styles.truyenContainer }
-                                //         >
-                                //             {/* Bia truyen */}
-                                //             <View style={ styles.truyenImageContainer }>
-                                //                 <Image source={{uri: truyen.comicImage}} style={ styles.truyenImage }/>
-                                //             </View>
-                                //             <Text style={ styles.truyenName }>{ truyen.comicTittle }</Text>
-                                //         </TouchableWithoutFeedback>
-                                //     })
-                                // })
+                                <MangaList url="http://www.nettruyen.com/tim-truyen/viet-nam" />
                             }
                             </View>
                         </View>
-
                     </View>
                 </ScrollView>
             </GlobalContainer>

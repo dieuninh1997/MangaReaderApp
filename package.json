@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
-    "crawler": "^1.2.0",
     "immutable": "^3.8.2",
     "lodash": "^4.17.11",
     "prop-types": "^15.6.2",
@@ -29,7 +28,8 @@
     "redux-actions": "^2.6.3",
     "redux-logger": "^3.0.6",
     "redux-persist": "^5.10.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",

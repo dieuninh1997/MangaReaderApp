@@ -13,7 +13,7 @@ import SplashScreen from 'screens/SplashScreen/SplashScreen';
 
 //Home
 import HomeScreen from 'screens/HomeScreen/HomeScreen';
-import MangaComponent from 'screens/HomeScreen/MangaComponent';
+// import MangaComponent from 'screens/HomeScreen/MangaComponent';
 
 //Manga
 import MangaScreen from 'screens/MangaScreen/MangaScreen';
@@ -79,7 +79,7 @@ export const Routes = createStackNavigator(
         SplashScreen: SplashScreen,
 
         HomeScreen: HomeScreen,
-        MangaComponent: MangaComponent,
+        // MangaComponent: MangaComponent,
 
         WebViewScreen: WebViewScreen,
 
@@ -106,7 +106,7 @@ export const Routes = createStackNavigator(
         MangaScreen: MangaScreen,
     },
     {
-        initialRouteName: 'MangaComponent',
+        initialRouteName: 'HomeScreen',
         headerMode: 'none',
         transitionConfig: transitionConfig,
         cardStyle: {

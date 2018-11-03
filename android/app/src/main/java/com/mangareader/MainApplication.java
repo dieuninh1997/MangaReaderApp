@@ -3,6 +3,7 @@ package com.mangareader;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import com.entria.views.RNViewOverflowPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import ui.toasty.RNToastyPackage;
@@ -27,6 +28,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new SplashScreenReactPackage(),
             new RNViewOverflowPackage(),
             new VectorIconsPackage(),
             new RNToastyPackage(),
