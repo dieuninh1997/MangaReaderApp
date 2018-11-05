@@ -15,7 +15,8 @@ export default ScaledSheet.create({
     },
 
     thumbnai: {
-
+        height: 200,
+        width: 150,
     },
 
     info: {

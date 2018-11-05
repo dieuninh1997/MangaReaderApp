@@ -109,5 +109,6 @@ export default ScaledSheet.create({
 
     list: {
         flexDirection: 'row',
+        paddingHorizontal: Sizes.s1,
     }
 });

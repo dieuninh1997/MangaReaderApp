@@ -114,10 +114,45 @@ class CrawlerData {
             
         });
     }
+
+    async getChapterImages(url) {
+        var c = new Crawler({
+            maxConnections : 10,
+            // This will be called for each crawled page
+            callback : function (error, res, done) {
+                done();
+            }
+        });
+        
+        return new Promise((resolve, reject)=>{
+            c.queue([{
+                uri: url,
+                jQuery: true,
+    
+                // The global callback won't be called
+                callback: function (error, res, done) {
+                    if(error){
+                        console.log(error);
+                    }else{
+                        const $ = res.$;
+                        let list = [];
+                        $('.reading-detail img').each(function () {
+                            // console.log(this.attribs.src)
+                            list.push(this.attribs.src);
+                        });;
+                        resolve(list);
+                    }
+                    done();
+                }
+            }]);
+        })
+        
+    }
 }
 
 let data = new CrawlerData();
-data.getChapters("http://www.nettruyen.com/truyen-tranh/nguoi-di-san").then(data=>{console.log(data)});
+data.getChapterImages("http://www.nettruyen.com/truyen-tranh/luon-co-yeu-quai/chap-82/416624").then(data=> console.log(data));
+// data.getChapters("http://www.nettruyen.com/truyen-tranh/luon-co-yeu-quai").then(data=>{console.log(data)});
 // data.getTruyen("http://www.nettruyen.com/tim-truyen/viet-nam").then(data=>{
 //     console.log(data);
 // });

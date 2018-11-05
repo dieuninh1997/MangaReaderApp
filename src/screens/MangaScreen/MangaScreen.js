@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { View, Text, TextInput, ScrollView, Image } from 'react-native';
 import { setLocale } from 'react-native-redux-i18n';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
+import _ from 'lodash';
 
 import GlobalContainer from 'components/GlobalContainer';
 import GlobalLoc from 'components/GlobalLoc';
@@ -13,7 +14,8 @@ import GlobalButton from 'components/GlobalButton';
 import GlobalTag from 'components/GlobalTag';
 import Images from 'assets/images';
 import I18n from 'i18n';
-
+import  MangaList  from './MangaList';
+import truyenConGai from './../../db/truyenConGai';
 
 import styles from 'styles/screens/MangaScreen/MangaScreen';
 
@@ -22,40 +24,52 @@ export class MangaScreen extends PureComponent {
 
     constructor(props){
         super(props);
+        
     }
 
 
     render() {
+        const { navigation } = this.props;
+        const id = navigation.getParam('id'); 
+        const manga = _.find(truyenConGai, { 'id': id });
+        const info = manga.comicChapters[0];
+        const thumbnai = { uri: info.infoImage };
+
+        console.log(id);
+        console.log(manga);
+        console.log(info);
+        console.log(thumbnai);
+
         return (
             <GlobalContainer>
-                {/* title */}
+                {/* header */}
                 <GlobalHeader showLeftButton={ true } showRightButton={ true }/>
                 
                 <View style={ styles.container }>
                     {/* tom tat truyen  */}
                     <View style={ styles.tomTatTruyen_container }>
                         {/* thumbnai */}
-                        <Image style={ styles.thumbnai } source={ Images.menu['emoj_admire'] } />
+                        <Image style={ styles.thumbnai } source={ thumbnai } />
 
                         {/* info */}
                         <View style={ styles.info }>
                             {/* ten truyen */}
-                            <Text style={ styles.mangaName }>Nu hoang Ai Cap</Text>
+                            <Text style={ styles.mangaName }>{ info.infoName }</Text>
                             
                             {/* Ten tac gia */}
-                            <GlobalLoc style={ styles.autherName } locKey="MangaScreen.autherName" name="Hosokawa Chieko" />
+                            <GlobalLoc style={ styles.autherName } locKey="MangaScreen.autherName" name={ info.infoAuthor } />
                             
                             {/* Ten dich gia */}
                             <GlobalLoc style={ styles.translaterName } locKey="MangaScreen.translaterName" name="SkyBlue" />
                            
                            {/* tag the loai truyen */}
-                            <GlobalTag data={['Romance', 'Shoujo', 'Xuyên không']} />
+                            <GlobalTag data={ info.infoKind.split(" - ") } />
 
                             {/* Luot doc, thich */}
                             <View style={ styles.viewLike_container }>
                                 {/* views */}
                                 <View style={ styles.views_container }>
-                                    <GlobalLoc style={ styles.views } locKey="MangaScreen.views" number="1M" />
+                                    <GlobalLoc style={ styles.views } locKey="MangaScreen.views" number={ info.infoView } />
                                 </View>
                                 {/* likes */}
                                 <View style={ styles.likes }>
@@ -68,13 +82,15 @@ export class MangaScreen extends PureComponent {
 
                     {/* danh sach truyen */}
                     <View style={ styles.listManga_container }>
-                        <Text>Ok</Text>
+                        <MangaList data={ truyenConGai } />
+
                     </View>
                 </View>
             </GlobalContainer>
         );
     }
 }
+
 
 
 export default MangaScreen;

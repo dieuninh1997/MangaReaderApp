@@ -4,34 +4,37 @@ import { Colors, FontSizes, Sizes } from 'styles/variables';
 
 export default ScaledSheet.create({
     container: {
-        paddingVertical: '8@ms',
-        paddingHorizontal: Sizes.s3,
-        flexDirection: 'row',
-        alignItems: 'center',
+        padding: Sizes.s1,
+        flexDirection: 'column',
         backgroundColor: 'white',
+        height: 250,
+        width: 170,
+    },
+    mangaContainer: {
+       flex: 1,
     },
 
     manga_thumbnai: {
-        width: 50,
-        height: 100,
-        position: 'relative',
+        flex: 1,
     },
 
     mangaViewsContainer: {
         position: 'absolute',
         bottom: 0,
         flexDirection: 'row',
+        width: '100%',
         backgroundColor: 'rgba(0,0,0, 0.4)'
     },
 
     eyeIcon: {
         color: Colors.info,
         fontSize: FontSizes.p,
+        marginHorizontal: Sizes.s1,
     },
 
     manga_views: {
         color: Colors.info,
-        fontSize: FontSizes.small,
+        fontSize: FontSizes.extraSmall,
     },
 
     manga_name: {

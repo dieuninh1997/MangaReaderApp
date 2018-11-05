@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
+import { navigate } from 'services/NavigationService';
 
 import styles from 'styles/screens/HomeScreen/MangaItem';
 
@@ -10,20 +12,22 @@ export const MangaItem = (props) => {
     const uri = { uri: manga.comicImage };
 
     return (
-        <View style={ styles.container }>
-            {/* thumbnai */}
-            
-            <View style={ styles.manga_thumbnai }>
-                <Image source={ uri } />
-                <View style={ styles.mangaViewsContainer }>
-                    <Icon name="eye" style={ styles.eyeIcon } />
-                    <Text style={ styles.manga_views}>{ manga.comicView }</Text>
+        <TouchableOpacity onPress={()=>{ navigate('MangaScreen', { id: manga.id })}}>
+            <View style={ styles.container }>
+                {/* thumbnai */}
+                
+                <View style={ styles.mangaContainer }>
+                    <Image source={ uri } style={ styles.manga_thumbnai }/>
+                    <View style={ styles.mangaViewsContainer }>
+                        <Icon name="eye" style={ styles.eyeIcon } />
+                        <Text style={ styles.manga_views }>{ manga.comicView }</Text>
+                    </View>
                 </View>
-            </View>
 
-            {/* name */}
-            <Text style={ styles.manga_name }>{ manga.comicTittle }</Text>
-        </View>
+                {/* name */}
+                <Text style={ styles.manga_name } numberOfLines={2} ellipsizeMode="tail">{ manga.comicTittle }</Text>
+            </View>
+        </TouchableOpacity>
     );
 };
 

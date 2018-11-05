@@ -11,6 +11,8 @@ import GlobalHeader from 'components/GlobalHeader';
 import { navigate } from 'services/NavigationService';
 import Images from 'assets/images';
 import  MangaList  from './MangaList';
+import truyenConGai from './../../db/truyenConGai';
+
 
 import styles from 'styles/screens/HomeScreen/HomeScreen';
 
@@ -87,7 +89,7 @@ export class HomeScreen extends PureComponent {
                             <GlobalLoc locKey="HomeScreen.title_truyenConGaiThich" style={ styles.title_truyenConGaiThich }/>
                             <View style={ styles.list }>
                             {
-                                <MangaList url="http://www.nettruyen.com/tim-truyen/viet-nam" />
+                                <MangaList data={ truyenConGai } />
                             }
                             </View>
                         </View>

@@ -8,6 +8,7 @@ export default ScaledSheet.create({
     },
 
     tagContainer: {
+        flex: 1,
         borderRadius: Sizes.s1,
         borderWidth: 1,
         borderColor: Colors.lightGray,
