@@ -22,7 +22,6 @@ export class HomeScreen extends PureComponent {
         super(props);
         this.onMenuBrowserButtonPressed = this.onMenuBrowserButtonPressed.bind(this);
         this.goToDetailScreen = this.goToDetailScreen.bind(this);
-
     }
 
     onMenuBrowserButtonPressed() {
@@ -35,7 +34,6 @@ export class HomeScreen extends PureComponent {
 
 
     render() {
-        
         return (
             <GlobalContainer style={ styles.container }>
                 {/* header */}

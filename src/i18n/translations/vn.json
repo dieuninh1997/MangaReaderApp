@@ -59,8 +59,10 @@
 
     "MangaScreen": {
         "autherName": "Tác giả: {{name}}",
-        "translaterName": "Dịch giả: {{name}}",
-        "views": "{{number}} lượt đọc"
+        "otherMangaName": "Tên khác: {{name}}",
+        "status": "Trạng thái: {{status}}",
+        "views": "{{number}} lượt đọc",
+        "updating": "Đang cập nhật"
     }
 
 }

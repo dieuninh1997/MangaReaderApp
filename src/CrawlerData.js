@@ -34,14 +34,17 @@ class CrawlerData {
                         const infoStatus = $('.detail-info .col-info .status .col-xs-8').text();
                         const infoKind = $('.detail-info .col-info .kind .col-xs-8').text()
                         const infoView = $('.detail-info .row p').text().split("Lượt xem")[1].trim();      
+                        const infoFollow = $('.detail-info .row .follow span b').text();     
 
                         chapters.push({
                             infoImage,
                             infoName,
                             infoOtherName,
                             infoAuthor,
+                            infoStatus,
                             infoKind,
-                            infoView
+                            infoView,
+                            infoFollow
                         });
 
 
@@ -151,8 +154,8 @@ class CrawlerData {
 }
 
 let data = new CrawlerData();
-data.getChapterImages("http://www.nettruyen.com/truyen-tranh/luon-co-yeu-quai/chap-82/416624").then(data=> console.log(data));
-// data.getChapters("http://www.nettruyen.com/truyen-tranh/luon-co-yeu-quai").then(data=>{console.log(data)});
+// data.getChapterImages("http://www.nettruyen.com/truyen-tranh/luon-co-yeu-quai/chap-82/416624").then(data=> console.log(data));
+data.getChapters("http://www.nettruyen.com/truyen-tranh/luon-co-yeu-quai").then(data=>{console.log(data)});
 // data.getTruyen("http://www.nettruyen.com/tim-truyen/viet-nam").then(data=>{
 //     console.log(data);
 // });

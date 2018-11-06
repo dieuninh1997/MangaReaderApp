@@ -17,6 +17,8 @@ import HomeScreen from 'screens/HomeScreen/HomeScreen';
 
 //Manga
 import MangaScreen from 'screens/MangaScreen/MangaScreen';
+import MangaSummarizeScreen from 'screens/MangaScreen/MangaSummarizeScreen';
+import MangaMenuScreen from 'screens/MangaScreen/MangaMenuScreen';
 
 //Follow
 import FollowScreen from 'screens/FollowScreen/FollowScreen';

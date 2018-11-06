@@ -4,7 +4,6 @@ import { View, Text, TouchableOpacity, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import Entypo from 'react-native-vector-icons/Entypo';
 import PropTypes from 'prop-types';
-// var Crawler = require("crawler");
 
 import GlobalContainer from 'components/GlobalContainer';
 import GlobalLoc from 'components/GlobalLoc';
@@ -29,21 +28,15 @@ export class MangaList extends PureComponent {
     }
 
     mangaKeyExtractor(manga) {
-        return manga.comicTitle;
+        return manga.id;
     }
 
     render() {
-        const data =  this.props;
+        const { data } =  this.props;
+        
+        // console.log(data.length);
         return(
             <GlobalContainer>
-                {/* title */}
-                {/* <View style={ styles.title_Container }>
-                    <Entypo name="dot-single" style={ styles.title_Icon } />
-                    <Text style={ styles.title_Text }>This is title</Text>
-                </View> */}
-
-
-                {/* list */}
                 <FlatList
                     horizontal 
                     data={ data }

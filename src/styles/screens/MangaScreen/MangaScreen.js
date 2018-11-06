@@ -37,7 +37,13 @@ export default ScaledSheet.create({
         marginBottom: Sizes.s1,
     },
 
-    translaterName: {
+    otherMangaName: {
+        fontSize: FontSizes.extraSmall,
+        color: Colors.lightText,
+        marginBottom: Sizes.s1,
+    },
+
+    status: {
         fontSize: FontSizes.extraSmall,
         color: Colors.lightText,
         marginBottom: Sizes.s1,
@@ -52,10 +58,10 @@ export default ScaledSheet.create({
     views_container: {
         backgroundColor: Colors.active,
         borderRadius: Sizes.s5,
-        padding: Sizes.s1,
+        paddingVertical: Sizes.s1,
+        paddingHorizontal: Sizes.s2,
         alignItems: 'center',
         justifyContent: 'center',
-        width: '50%',
         flexDirection: 'row',
     },
 
@@ -64,6 +70,12 @@ export default ScaledSheet.create({
         color: Colors.lightText,
     },
 
+    eyeIcon: {
+        fontSize: FontSizes.p,
+        color: Colors.lightText,
+        marginRight: Sizes.s1,
+    },                                    
+    
     likes: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -82,5 +94,16 @@ export default ScaledSheet.create({
 
     listManga_container: {
         flex: 1,
-    }
+    },
+
+    buttonReadManga: {
+        flex: 1,
+        flexDirection: 'row',
+    },
+
+    button: {
+        flex: 1,
+        marginHorizontal: Sizes.s1,
+    },
+
 });

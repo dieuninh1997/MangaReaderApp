@@ -12,7 +12,7 @@ import styles from 'styles/components/GlobalTabBar';
 import { Colors } from 'styles/variables';
 
 
-class TabbarButton extends PureComponent {
+export class TabbarButton extends PureComponent {
 
     constructor(props) {
         super(props);

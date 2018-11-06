@@ -59,8 +59,12 @@
 
     "MangaScreen": {
         "autherName": "Auther: {{name}}",
-        "translaterName": "Translater: {{name}}",
-        "views": "{{number}} times"
-    }
+        "otherMangaName": "Other name: {{name}}",
+        "status": "Status: {{status}}",
+        "views": "{{number}} times",
+        "updating": "Updating",
+        "readBegin": "Read oldest",
+        "readEnd": "Read newest"
+    },
 
 }
