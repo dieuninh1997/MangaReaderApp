@@ -35,6 +35,11 @@ export const GLOBAL_HIDE_MODAL = () => (dispatch) => {
     }));
 };
 
+// App state
+export const GLOBAL_UPDATE_APP_STATE = (appState) => (dispatch) => {
+    return dispatch(GLOBAL_UPDATE_STATE({ appState: appState, }));
+};
+
 
 
 /**

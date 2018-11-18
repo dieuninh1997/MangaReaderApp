@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 import NavigationService, { emitNavigationChanged } from 'services/NavigationService';
 import GlobalFollowTabBar from 'components/GlobalFollowTabBar';
-
+import { GLOBAL_UPDATE_APP_STATE } from 'store/global';
 
 //Splash
 import SplashScreen from 'screens/SplashScreen/SplashScreen';
@@ -121,10 +121,43 @@ export const Routes = createStackNavigator(
 
 
 class RoutesComponent extends PureComponent {
+    constructor(props) {
+        super(props);
+        this.handleAppStateChange = this.handleAppStateChange.bind(this);
+    }
+    shouldComponentUpdate() {
+        return false;
+    }
 
-    // shouldComponentUpdate() {
-    //     return false;
-    // }
+    componentWillUnmount() {
+        AppState.removeEventListener('change', this.handleAppStateChange);
+        BackHandler.removeEventListener('hardwareBackPress', this.onDeviceBackButtonPress);
+    }
+
+    componentDidMount() {
+        AppState.addEventListener('change', this.handleAppStateChange);
+        BackHandler.addEventListener('hardwareBackPress', this.onDeviceBackButtonPress);
+    }
+    onDeviceBackButtonPress() {
+        Alert.alert(
+            'Exit App',
+            'Exiting the application?', [{
+                text: 'Cancel',
+                onPress: () => console.log('Cancel Pressed'),
+                style: 'cancel'
+            }, {
+                text: 'OK',
+                onPress: () => BackHandler.exitApp(),
+            }, ], {
+                cancelable: false
+            }
+        )
+        return true;
+    }
+
+    handleAppStateChange(nextAppState) {
+        this.props.updateAppState(nextAppState);
+    }
 
     setTopLevelNavigator(navigatorRef) {
         NavigationService.setTopLevelNavigator(navigatorRef);
@@ -149,6 +182,11 @@ class RoutesComponent extends PureComponent {
     }
 }
 
+const mapDispatchToProps = (dispatch) => ({
+    updateAppState: (appState) => {
+        return dispatch(GLOBAL_UPDATE_APP_STATE(appState));
+    },
+});
 
 
-export default RoutesComponent;
+export default connect(null, mapDispatchToProps)(RoutesComponent);

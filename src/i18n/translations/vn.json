@@ -62,7 +62,9 @@
         "otherMangaName": "Tên khác: {{name}}",
         "status": "Trạng thái: {{status}}",
         "views": "{{number}} lượt đọc",
-        "updating": "Đang cập nhật"
+        "updating": "Đang cập nhật",
+        "readBegin": "Đọc từ đầu",
+        "readEnd": "Đọc mới nhất"
     }
 
 }
