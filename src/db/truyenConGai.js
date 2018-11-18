@@ -5,19 +5,18 @@ const truyenConGai = [
         comicLink: 'http://www.nettruyen.com/truyen-tranh/luon-co-yeu-quai',
         comicImage: 'https://3.bp.blogspot.com/-OoE5hS24f6U/Wpqy6tSCAcI/AAAAAAAAQ-4/bDDZ8IunsW47AtiPPXVlue1mK3b4Hj4yQCHMYCw/luon-co-yeu-quai',
         comicView: '982.067',
-        comicChapters: [
-        {infoImage: 'https://3.bp.blogspot.com/-OoE5hS24f6U/Wpqy6tSCAcI/AAAAAAAAQ-4/bDDZ8IunsW47AtiPPXVlue1mK3b4Hj4yQCHMYCw/luon-co-yeu-quai',
+        comicIntro: {
+            infoImage: 'https://3.bp.blogspot.com/-OoE5hS24f6U/Wpqy6tSCAcI/AAAAAAAAQ-4/bDDZ8IunsW47AtiPPXVlue1mK3b4Hj4yQCHMYCw/luon-co-yeu-quai',
             infoName: 'Luôn Có Yêu Quái',
             infoOtherName: '',
             infoAuthor: '',
             infoStatus: 'Đang tiến hành',
             infoKind: 'Manhua - Ngôn Tình - Truyện Màu',
             infoView: '998.176',
-            infoFollow: '5.654' },
-        { comicChapter: '',
-            comicChapterLink: undefined,
-            comicDateUpdate: 'Cập nhật',
-            comicView: 'Lượt xem' },
+            infoFollow: '5.654',
+            infoContent: '...'
+        },
+        comicChapters: [
         { comicChapter: 'Chapter 83',
             comicChapterLink: 'http://www.nettruyen.com/truyen-tranh/luon-co-yeu-quai/chap-83/417533',
             comicDateUpdate: '2 ngày trước',

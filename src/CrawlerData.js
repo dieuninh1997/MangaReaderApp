@@ -34,8 +34,10 @@ class CrawlerData {
                         const infoStatus = $('.detail-info .col-info .status .col-xs-8').text();
                         const infoKind = $('.detail-info .col-info .kind .col-xs-8').text()
                         const infoView = $('.detail-info .row p').text().split("Lượt xem")[1].trim();      
-                        const infoFollow = $('.detail-info .row .follow span b').text();     
-
+                        const infoFollow = $('.detail-info .row .follow span b').text();   
+                        let infoContent = $('.detail-content p').text(); 
+                        
+                        console.log(res);
                         chapters.push({
                             infoImage,
                             infoName,
@@ -44,7 +46,8 @@ class CrawlerData {
                             infoStatus,
                             infoKind,
                             infoView,
-                            infoFollow
+                            infoFollow,
+                            infoContent
                         });
 
 

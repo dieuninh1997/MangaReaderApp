@@ -9,5 +9,8 @@ export default ScaledSheet.create({
         padding: Sizes.s2,
         backgroundColor: 'pink',
     },
+    scene: {
+        flex: 1,
+    },
 
 });

@@ -64,7 +64,11 @@
         "views": "{{number}} lượt đọc",
         "updating": "Đang cập nhật",
         "readBegin": "Đọc từ đầu",
-        "readEnd": "Đọc mới nhất"
+        "readEnd": "Đọc mới nhất",
+        "noiDung": "Nội dung",
+        "soChuong": "Số chương",
+        "capNhat": "Cập nhật",
+        "luotXem": "Lượt xem"
     }
 
 }

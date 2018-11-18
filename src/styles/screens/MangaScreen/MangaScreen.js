@@ -6,10 +6,12 @@ const { width, height } = Dimensions.get('window');
 
 export default ScaledSheet.create({
     container: {
+        flex: 1,
         padding: Sizes.s2,
+        marginBottom: Sizes.s2,
     },
 
-    tomTatTruyen_container: {
+    truyen_container: {
         flexDirection: 'row',
         height: height * 0.3,
     },
@@ -92,18 +94,57 @@ export default ScaledSheet.create({
         color: Colors.lightText,
     },
 
-    listManga_container: {
+    listChapter_container: {
         flex: 1,
+        backgroundColor: Colors.active
     },
 
-    buttonReadManga: {
-        flex: 1,
+    headerItemChapter: {
+        height: Sizes.v6,
+        backgroundColor: Colors.lightenPrimary,
         flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: Sizes.s1
     },
 
-    button: {
-        flex: 1,
-        marginHorizontal: Sizes.s1,
+    rowItemChapter: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
 
+    item_soChuong: {
+        flex: 5,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    item_capNhat: {
+        flex: 4,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    item_luotXem: {
+        flex: 3,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    tomTatTruyen_button: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: Colors.lightenPrimary,
+        paddingHorizontal: Sizes.s1,
+    },
+
+    iconContent: {
+        fontSize: FontSizes.h4,
+        color: Colors.active,
+        marginRight: Sizes.s1,
+    },
+
+    tomTatTruyen_container: {
+        
+    }
 });

@@ -64,7 +64,11 @@
         "views": "{{number}} times",
         "updating": "Updating",
         "readBegin": "Read oldest",
-        "readEnd": "Read newest"
+        "readEnd": "Read newest",
+        "noiDung": "Content",
+        "soChuong": "Chapter",
+        "capNhat": "Date",
+        "luotXem": "View"
     }
 
 }
