@@ -49,13 +49,13 @@ export class HomeScreen extends PureComponent {
                     </View>
                     {/* menu */}
                     <View style={ styles.menuContainer }>
-                        {/* Browser */}
+                        {/* Bang xep hang */}
                         <TouchableOpacity onPress={ this.onMenuBrowserButtonPressed }>
-                            <View style={[ styles.menuButtonContainer, styles.menuBrower ]}>
+                            <View style={[ styles.menuButtonContainer, styles.menuRanking ]}>
                                 <View style={ styles.menuImageContainer }>
-                                    <Image style={ styles.menuImage } source={ Images.menu['emoj_admire'] } />
+                                    <Image style={ styles.menuImage } source={ Images.menu['ic_ranking'] } />
                                 </View>
-                                <GlobalLoc style={ styles.menuTitle } locKey="HomeScreen.menuBrowser"/>
+                                <GlobalLoc style={ styles.menuTitle } locKey="HomeScreen.menuBangXepHang"/>
                             </View>
                         </TouchableOpacity>
 
@@ -63,7 +63,7 @@ export class HomeScreen extends PureComponent {
                         <TouchableOpacity onPress={()=>{}}>
                             <View style={[ styles.menuButtonContainer, styles.menuPhanLoai ]}>
                                 <View style={ styles.menuImageContainer }>
-                                    <Image style={ styles.menuImage } source={ Images.menu['emoj_smile'] } />
+                                    <Image style={ styles.menuImage } source={ Images.menu['ic_tag'] } />
                                 </View>
                                 <GlobalLoc style={ styles.menuTitle } locKey="HomeScreen.menuPhanLoai"/>
                             </View>
@@ -73,15 +73,15 @@ export class HomeScreen extends PureComponent {
                         <TouchableOpacity onPress={()=>{}}>
                             <View style={[ styles.menuButtonContainer, styles.menuCapNhatMoi ]}>
                                 <View style={ styles.menuImageContainer }>
-                                    <Image style={ styles.menuImage } source={ Images.menu['emoj_glass'] } />
+                                    <Image style={ styles.menuImage } source={ Images.menu['ic_new'] } />
                                 </View>
                                 <GlobalLoc style={ styles.menuTitle } locKey="HomeScreen.menuCapNhatMoi"/>
                             </View>
                         </TouchableOpacity>
                     </View>
 
-                    {/* separator */}
-                    <View style={ styles.separator }/>
+                    {/* separator
+                    <View style={ styles.separator }/> */}
 
 
                     {/* list manga */}

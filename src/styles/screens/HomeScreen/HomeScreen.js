@@ -24,10 +24,10 @@ export default ScaledSheet.create({
         borderRadius: Sizes.s1,
     },
 
-    separator: {
-        height: Sizes.s2,
-        backgroundColor: Colors.lightBackground,
-    },
+    // separator: {
+    //     height: Sizes.s2,
+    //     backgroundColor: Colors.lightBackground,
+    // },
 
     menuContainer: {
         flexDirection: 'row',
@@ -37,27 +37,29 @@ export default ScaledSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingHorizontal: Sizes.s2,
-        marginVertical: Sizes.s2,
+        backgroundColor: Colors.lightenPrimary,
     },
 
     menuButtonContainer: {
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: Sizes.s1,
-        paddingVertical: Sizes.s3,
+        paddingBottom: Sizes.s1,
         width: width*0.3,
     },
 
     menuImageContainer: {
-        width: '40@ms',
-        height: '40@ms',
-        borderRadius: Sizes.s4,
+        width: '100%',
+        height: '30@ms',
+        borderTopLeftRadius: Sizes.s1,
+        borderTopRightRadius: Sizes.s1,
         backgroundColor: Colors.info,
+        paddingVertical: Sizes.s1,
         alignItems: 'center',
         justifyContent: 'center',
     },
 
-    menuBrower: {
+    menuRanking: {
         backgroundColor: '#faa6a6',
     },
 
