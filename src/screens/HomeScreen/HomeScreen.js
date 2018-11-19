@@ -12,7 +12,7 @@ import { navigate } from 'services/NavigationService';
 import Images from 'assets/images';
 import  MangaList  from './MangaList';
 import truyenConGai from './../../db/truyenConGai';
-
+import BannerHome from './BannerHome';
 
 import styles from 'styles/screens/HomeScreen/HomeScreen';
 
@@ -37,12 +37,16 @@ export class HomeScreen extends PureComponent {
         return (
             <GlobalContainer style={ styles.container }>
                 {/* header */}
-                <GlobalHeader 
+                {/* <GlobalHeader 
                     showRightButton={ true }  
                     locKey="HomeScreen.title"
-                />
+                /> */}
 
                 <ScrollView>
+                    {/* swiper */}
+                    <View style={ styles.viewBanner }>
+                        <BannerHome navigation={ this.props.navigation }/>
+                    </View>
                     {/* menu */}
                     <View style={ styles.menuContainer }>
                         {/* Browser */}

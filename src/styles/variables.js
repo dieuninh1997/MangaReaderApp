@@ -24,7 +24,11 @@ export const Colors = {
     black: '#000000',
     pink: '#ffc4b2',
     gray: '#c4bec0',
-    lightGray: '#bab8b8'
+    lightGray: '#bab8b8',
+
+
+    //common color
+    screenBgColor: '#10121e',
 };
 
 

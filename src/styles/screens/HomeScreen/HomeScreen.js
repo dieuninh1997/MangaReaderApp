@@ -19,6 +19,11 @@ export default ScaledSheet.create({
         backgroundColor: Colors.info,
     },
 
+    viewBanner: {
+        height: '167@s',
+        borderRadius: Sizes.s1,
+    },
+
     separator: {
         height: Sizes.s2,
         backgroundColor: Colors.lightBackground,
