@@ -101,7 +101,7 @@ export default ScaledSheet.create({
 
     headerItemChapter: {
         height: Sizes.v6,
-        backgroundColor: Colors.lightenPrimary,
+        backgroundColor: Colors.active,
         flexDirection: 'row',
         alignItems: 'center',
         paddingHorizontal: Sizes.s1
@@ -111,36 +111,57 @@ export default ScaledSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
+        paddingHorizontal: Sizes.s1,
+        paddingVertical: Sizes.s3,
+        borderBottomWidth: 1,
+        borderBottomColor: Colors.lightGray,
+    },
+
+    
+    headerItem_soChuong: {
+        flex: 6,
+    },
+
+    headerItem_capNhat: {
+        flex: 4,
+        textAlign: 'center',
+    },
+
+    headerItem_luotXem: {
+        flex: 3,
+        textAlign: 'center',
     },
 
     item_soChuong: {
-        flex: 5,
-        alignItems: 'center',
-        justifyContent: 'center',
+        flex: 6,
+        fontSize: Sizes.p,
+        color: Colors.darkText,
     },
 
     item_capNhat: {
         flex: 4,
-        alignItems: 'center',
-        justifyContent: 'center',
+        textAlign: 'center',
+        fontSize: Sizes.extraSmall,
+        color: Colors.darkText,
     },
 
     item_luotXem: {
         flex: 3,
-        alignItems: 'center',
-        justifyContent: 'center',
+        textAlign: 'center',
+        fontSize: Sizes.extraSmall,
+        color: Colors.darkText,
     },
 
     tomTatTruyen_button: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: Colors.lightenPrimary,
+        backgroundColor: Colors.active,
         paddingHorizontal: Sizes.s1,
     },
 
     iconContent: {
         fontSize: FontSizes.h4,
-        color: Colors.active,
+        color: Colors.primary,
         marginRight: Sizes.s1,
     },
 

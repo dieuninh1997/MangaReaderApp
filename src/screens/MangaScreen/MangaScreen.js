@@ -1,7 +1,7 @@
 import React from 'react';
 import PureComponent from 'pure-component';
 import { connect } from 'react-redux';
-import { View, Text, TextInput, ScrollView, Image, TouchableOpacity, Animated, FlatList } from 'react-native';
+import { View, Text, TextInput, ScrollView, Image, TouchableHighlight, Animated, FlatList } from 'react-native';
 import { setLocale } from 'react-native-redux-i18n';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -32,11 +32,16 @@ export class MangaScreen extends PureComponent {
 
     renderItemChapter({item: chapter}) {
         return(
-           <View style={ styles.rowItemChapter }>
-               <Text style={ styles.item_soChuong }>{ chapter.comicChapter }</Text>
-               <Text style={ styles.item_capNhat }>{ chapter.comicDateUpdate }</Text>
-               <Text style={ styles.item_luotXem }>{ chapter.comicView }</Text>
-           </View>
+            <TouchableHighlight
+                underlayColor='#cedcff'
+                onPress={()=>{}}
+            >
+                <View style={ styles.rowItemChapter }>
+                    <Text style={ styles.item_soChuong }>{ chapter.comicChapter }</Text>
+                    <Text style={ styles.item_capNhat }>{ chapter.comicDateUpdate }</Text>
+                    <Text style={ styles.item_luotXem }>{ chapter.comicView }</Text>
+                </View>
+            </TouchableHighlight>
         );
     }
 
@@ -99,7 +104,9 @@ export class MangaScreen extends PureComponent {
                     </View>
 
                     {/* button show: tóm tắt, chapters */}
-                    <View style={ styles.tomTatTruyen_button }>
+                    <View 
+                        style={ styles.tomTatTruyen_button }
+                    >
                         <GlobalLoc locKey="MangaScreen.noiDung"/>
                         <MaterialCommunityIcons name="chevron-double-down" style={ styles.iconContent }/>
                     </View>
@@ -110,10 +117,12 @@ export class MangaScreen extends PureComponent {
                     </View>
 
                     {/* danh sach chap */}
+
+                    
                     <View style={ styles.headerItemChapter }>
-                        <GlobalLoc locKey="MangaScreen.soChuong" style={ styles.item_soChuong } />
-                        <GlobalLoc locKey="MangaScreen.capNhat" style={ styles.item_capNhat } />
-                        <GlobalLoc locKey="MangaScreen.luotXem" style={ styles.item_luotXem } />
+                        <GlobalLoc locKey="MangaScreen.soChuong" style={ styles.headerItem_soChuong } />
+                        <GlobalLoc locKey="MangaScreen.capNhat" style={ styles.headerItem_capNhat } />
+                        <GlobalLoc locKey="MangaScreen.luotXem" style={ styles.headerItem_luotXem } />
                     </View>
                     
                     <FlatList
@@ -121,8 +130,7 @@ export class MangaScreen extends PureComponent {
                         renderItem={ this.renderItemChapter }
                         keyExtractor={ this.mangaKeyExtractor }
                     />
-
-                </>
+                </View>
             </GlobalContainer>
         );
     }
