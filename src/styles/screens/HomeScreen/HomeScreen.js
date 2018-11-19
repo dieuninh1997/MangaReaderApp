@@ -87,12 +87,13 @@ export default ScaledSheet.create({
 
     listTruyenConGaiThichContainer: {
         paddingVertical: Sizes.s3,
-        alignItems: 'center',
     },
 
     title_truyenConGaiThich: {
-        fontSize: FontSizes.p,
-        color: Colors.darkText,
+        fontSize: FontSizes.h5,
+        color: Colors.primary,
+        fontWeight: 'bold',
+        paddingHorizontal: Sizes.s2,
     },
 
     truyenContainer: {

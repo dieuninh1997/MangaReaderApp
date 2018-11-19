@@ -8,6 +8,7 @@ export default {
         ic_offer: require('./menu/ic_offer.png'),
         ic_tag: require('./menu/ic_tag.png'),
         ic_new: require('./menu/ic_new.png'),
+        ic_balloons: require('./menu/ic_balloons.png'),
     },
     background: require('./background.png'),
 };

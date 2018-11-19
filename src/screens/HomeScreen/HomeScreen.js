@@ -11,8 +11,10 @@ import GlobalHeader from 'components/GlobalHeader';
 import { navigate } from 'services/NavigationService';
 import Images from 'assets/images';
 import  MangaList  from './MangaList';
-import truyenConGai from './../../db/truyenConGai';
 import BannerHome from './BannerHome';
+import truyenConGai from './../../db/truyenConGai';
+import truyenConTrai from './../../db/truyenConTrai';
+import truyenRomance from './../../db/truyenRomance';
 
 import styles from 'styles/screens/HomeScreen/HomeScreen';
 
@@ -88,11 +90,36 @@ export class HomeScreen extends PureComponent {
                     <View style={ styles.listManagaContainer }>
                         {/* truyen con gai thich */}
                         <View style={ styles.listTruyenConGaiThichContainer }>
+                            {/* title */}
                             <GlobalLoc locKey="HomeScreen.title_truyenConGaiThich" style={ styles.title_truyenConGaiThich }/>
+
+                            {/* list */}
                             <View style={ styles.list }>
-                            {
                                 <MangaList data={ truyenConGai } />
-                            }
+                            </View>
+                        </View>
+
+
+                        {/* truyen con trai thich */}
+                        <View style={ styles.listTruyenConGaiThichContainer }>
+                            {/* title */}
+                            <GlobalLoc locKey="HomeScreen.title_truyenConTraiThich" style={ styles.title_truyenConGaiThich }/>
+
+                            {/* list */}
+                            <View style={ styles.list }>
+                                <MangaList data={ truyenConTrai } />
+                            </View>
+                        </View>
+
+
+                        {/* truyen Romance */}
+                        <View style={ styles.listTruyenConGaiThichContainer }>
+                            {/* title */}
+                            <GlobalLoc locKey="HomeScreen.title_truyenRomance" style={ styles.title_truyenConGaiThich }/>
+
+                            {/* list */}
+                            <View style={ styles.list }>
+                                <MangaList data={ truyenRomance } />
                             </View>
                         </View>
                     </View>

@@ -1,7 +1,7 @@
 import React from 'react';
 import PureComponent from 'pure-component';
 import { connect } from 'react-redux';
-import { View, Text, TextInput, ScrollView, Image, TouchableHighlight, Animated, FlatList } from 'react-native';
+import { View, Text, TextInput, ScrollView, Image, TouchableHighlight, Animated, FlatList, TouchableOpacity } from 'react-native';
 import { setLocale } from 'react-native-redux-i18n';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -23,6 +23,10 @@ import styles from 'styles/screens/MangaScreen/MangaScreen';
 
 
 export class MangaScreen extends PureComponent {
+
+    state = {
+        contentActive: true
+    };
 
     constructor(props){
         super(props);
@@ -49,6 +53,17 @@ export class MangaScreen extends PureComponent {
         return chapter.comicChapter;
     }
 
+    activeContent(title) {
+        switch(title) {
+            case 'content':
+                this.setState({contentActive: true});
+                break;
+            case 'chapters':
+                this.setState({contentActive: false});
+                break;
+        }
+    }
+
     render() {
         const { navigation } = this.props;
         const id = navigation.getParam('id'); 
@@ -56,8 +71,8 @@ export class MangaScreen extends PureComponent {
         const info = manga.comicIntro;
         const chapters = manga.comicChapters;
         const thumbnai = { uri: info.infoImage };
-
-        console.log(chapters);
+        const { contentActive } = this.state;
+        
         return (
             <GlobalContainer>
                 {/* header */}
@@ -103,33 +118,76 @@ export class MangaScreen extends PureComponent {
                         </View>
                     </View>
 
-                    {/* button show: tóm tắt, chapters */}
-                    <View 
-                        style={ styles.tomTatTruyen_button }
-                    >
-                        <GlobalLoc locKey="MangaScreen.noiDung"/>
-                        <MaterialCommunityIcons name="chevron-double-down" style={ styles.iconContent }/>
-                    </View>
-                    
-                    {/* nội dung tóm tắt */}
-                    <View style={ styles.tomTatTruyen_container }>
-                        <Text>{ info.infoContent }</Text>
-                    </View>
+                    {/* menu tab */}
+                    <View style={ styles.menuTabContainer }>
+                        {/* tab content */}
+                        <TouchableOpacity
+                            style={ styles.menuTabItem }
+                            onPress={()=>this.activeContent('content')}
+                        >
+                            <View >
+                                <GlobalLoc 
+                                    locKey="MangaScreen.content"
+                                    style={ contentActive ? styles.contentActive: styles.contentNotActive }
+                                />
+                            </View>
+                        </TouchableOpacity>
 
-                    {/* danh sach chap */}
+                        {/* separator */}
+                        <View style={{ width: 1, backgroundColor: 'gray'}}/>
 
-                    
-                    <View style={ styles.headerItemChapter }>
-                        <GlobalLoc locKey="MangaScreen.soChuong" style={ styles.headerItem_soChuong } />
-                        <GlobalLoc locKey="MangaScreen.capNhat" style={ styles.headerItem_capNhat } />
-                        <GlobalLoc locKey="MangaScreen.luotXem" style={ styles.headerItem_luotXem } />
+                        {/* tab chapters */}
+                        <TouchableOpacity
+                            style={ styles.menuTabItem }
+                            onPress={()=>this.activeContent('chapters')}
+                        >
+                            <View>
+                                <GlobalLoc 
+                                    locKey="MangaScreen.menu"
+                                    style={ contentActive ? styles.contentNotActive: styles.contentActive }
+                                />
+                            </View>
+                            
+                        </TouchableOpacity>
+                    </View>
+                   
+                    <View style={{flex: 1}}>
+                    {
+                        contentActive ? (
+                            <View>
+                                <View style={ styles.tomTatTruyen_button }>
+                                    {/* title noi dung tóm tắt */}
+                                    <GlobalLoc locKey="MangaScreen.noiDung" style={{ marginVertical: 5 }}/>
+                                    <MaterialCommunityIcons name="chevron-double-down" style={ styles.iconContent }/>
+                                </View>
+                                <View style={ styles.tomTatTruyen_container }>
+                                    {/* nội dung tóm tắt */}                    
+                                    <Text>{ info.infoContent }</Text>
+                                </View>
+                            </View>
+                        ) : (
+                            <View>
+                                <View style={ styles.headerItemChapter }>
+                                {/* danh sach chap */}
+                                    <GlobalLoc locKey="MangaScreen.soChuong" style={ styles.headerItem_soChuong } />
+                                    <GlobalLoc locKey="MangaScreen.capNhat" style={ styles.headerItem_capNhat } />
+                                    <GlobalLoc locKey="MangaScreen.luotXem" style={ styles.headerItem_luotXem } />
+                                </View>
+
+                                <FlatList
+                                    data={ chapters }
+                                    renderItem={ this.renderItemChapter }
+                                    keyExtractor={ this.mangaKeyExtractor }
+                                />
+                            </View>
+                        )
+                    }
                     </View>
                     
-                    <FlatList
-                        data={ chapters }
-                        renderItem={ this.renderItemChapter }
-                        keyExtractor={ this.mangaKeyExtractor }
-                    />
+
+                    
+
+                    
                 </View>
             </GlobalContainer>
         );

@@ -4,7 +4,9 @@
         "menuPhanLoai": "Phân loại",
         "menuBangXepHang": "Bảng xếp hạng",
         "menuCapNhatMoi": "Cập nhật mới",
-        "title_truyenConGaiThich": "Truyện con gái thích"
+        "title_truyenConGaiThich": "Truyện con gái thích",
+        "title_truyenConTraiThich": "Truyện con trai thích",
+        "title_truyenRomance": "Truyện lãng mạn"   
     
     },
 
@@ -68,7 +70,9 @@
         "noiDung": "Nội dung",
         "soChuong": "Số chương",
         "capNhat": "Cập nhật",
-        "luotXem": "Lượt xem"
+        "luotXem": "Lượt xem",
+        "menu": "MỤC LỤC",
+        "content": "GIỚI THIỆU"
     }
 
 }

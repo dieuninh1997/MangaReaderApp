@@ -4,8 +4,9 @@
         "menuPhanLoai": "Classify",
         "menuBangXepHang": "Ranking",
         "menuCapNhatMoi": "New update",
-        "title_truyenConGaiThich": "Girl Manga"
-    
+        "title_truyenConGaiThich": "GIRL MANGA",
+        "title_truyenConTraiThich": "BOY MANGA",
+        "title_truyenRomance": "ROMANCE"  
     },
 
     "WebViewScreen": {
@@ -68,7 +69,9 @@
         "noiDung": "Content",
         "soChuong": "Chapter",
         "capNhat": "Date",
-        "luotXem": "View"
+        "luotXem": "View",
+        "menu": "MENU",
+        "content": "INTRODUCE"
     }
 
 }
