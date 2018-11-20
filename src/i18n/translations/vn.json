@@ -73,6 +73,10 @@
         "luotXem": "Lượt xem",
         "menu": "MỤC LỤC",
         "content": "GIỚI THIỆU"
+    },
+
+    "MangaDetailScreen": {
+        "title": ""
     }
 
 }

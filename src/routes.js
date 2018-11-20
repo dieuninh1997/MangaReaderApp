@@ -18,7 +18,7 @@ import HomeScreen from 'screens/HomeScreen/HomeScreen';
 //Manga
 import MangaScreen from 'screens/MangaScreen/MangaScreen';
 import MangaSummarizeScreen from 'screens/MangaScreen/MangaSummarizeScreen';
-import MangaMenuScreen from 'screens/MangaScreen/MangaMenuScreen';
+import MangaDetailScreen from 'screens/MangaScreen/MangaDetailScreen';
 
 //Follow
 import FollowScreen from 'screens/FollowScreen/FollowScreen';
@@ -106,6 +106,7 @@ export const Routes = createStackNavigator(
         SearchScreen,
 
         MangaScreen: MangaScreen,
+        MangaDetailScreen: MangaDetailScreen,
     },
     {
         initialRouteName: 'HomeScreen',

@@ -72,6 +72,10 @@
         "luotXem": "View",
         "menu": "MENU",
         "content": "INTRODUCE"
+    },
+
+    "MangaDetailScreen": {
+        "title": ""
     }
 
 }

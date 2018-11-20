@@ -101,7 +101,7 @@ export default ScaledSheet.create({
 
     headerItemChapter: {
         height: Sizes.v6,
-        backgroundColor: Colors.lightBackground,
+        backgroundColor: Colors.lightenPrimary,
         flexDirection: 'row',
         alignItems: 'center',
         paddingHorizontal: Sizes.s1
@@ -154,7 +154,7 @@ export default ScaledSheet.create({
     tomTatTruyen_button: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: Colors.lightBackground,
+        backgroundColor: Colors.lightenPrimary,
         paddingHorizontal: Sizes.s1,
     },
 
@@ -165,12 +165,13 @@ export default ScaledSheet.create({
     },
 
     tomTatTruyen_container: {
-        
+        marginHorizontal: Sizes.s1,
+        marginVertical: Sizes.s2,
     },
 
     menuTabContainer: {
         flexDirection: 'row',
-        backgroundColor: Colors.active
+        backgroundColor: Colors.primary
     },
 
     menuTabItem: {
@@ -181,13 +182,14 @@ export default ScaledSheet.create({
     },
 
     contentActive: {
-        color: Colors.primary,
+        color: Colors.active,
         paddingLeft: '5@s',
-        fontSize: '14@s'
+        fontSize: '14@s',
+        fontWeight: 'bold',
     },
 
     contentNotActive: {
-        color: Colors.lightText,
+        color: Colors.lightBackground,
         paddingLeft: '5@s',
         fontSize: '14@s'
     }

@@ -17,7 +17,7 @@ import Images from 'assets/images';
 import I18n from 'i18n';
 import  MangaList  from 'screens/HomeScreen/MangaList';
 import truyenConGai from './../../db/truyenConGai';
-import { MenuNavigator } from './MangaMenuScreen';
+import { navigate } from 'services/NavigationService';
 
 import styles from 'styles/screens/MangaScreen/MangaScreen';
 
@@ -25,20 +25,25 @@ import styles from 'styles/screens/MangaScreen/MangaScreen';
 export class MangaScreen extends PureComponent {
 
     state = {
-        contentActive: true
+        contentActive: false
     };
 
     constructor(props){
         super(props);
         this.renderItemChapter = this.renderItemChapter.bind(this);
         this.mangaKeyExtractor = this.mangaKeyExtractor.bind(this);
+        this.onChapterPressed = this.onChapterPressed.bind(this);
+    }
+
+    onChapterPressed(chapter) {
+        navigate('MangaDetailScreen', { chapter: chapter })
     }
 
     renderItemChapter({item: chapter}) {
         return(
             <TouchableHighlight
-                underlayColor='#cedcff'
-                onPress={()=>{}}
+                underlayColor='#E1DCDC'
+                onPress={ () => this.onChapterPressed(chapter) }
             >
                 <View style={ styles.rowItemChapter }>
                     <Text style={ styles.item_soChuong }>{ chapter.comicChapter }</Text>
