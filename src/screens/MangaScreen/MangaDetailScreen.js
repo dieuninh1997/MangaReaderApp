@@ -35,13 +35,23 @@ export class MangaDetailScreen extends PureComponent {
         console.log(this.state);
     }
 
+    onNextChapterPressed() {
+        const { type } = this.state;
+        // if(type)
+    }
+
+    onBackChapterPressed() {
+
+    }
+
     render() {
         const { navigation } = this.props;
         const chapter = navigation.getParam('chapter'); 
         const id = navigation.getParam('id'); 
         const chapterImages = chapter.comicImages;
         const { disableButtonBackChapter, disableButtonNextChapter } = this.state;
-        const chapters = _.find(truyenConGai, { 'id': id }).comicChapters;
+        const manga =  _.find(truyenConGai, { 'id': id });
+        const chapters = manga.comicChapters;
         let types = [];
         chapters.forEach(item => {
           types.push(item.comicChapter);
@@ -50,14 +60,18 @@ export class MangaDetailScreen extends PureComponent {
         return (
             <GlobalContainer>
                 {/* title */}
-                <GlobalHeader showLeftButton={ true } locKey="MangaDetailScreen.title" />
+                <GlobalHeader 
+                    showLeftButton={ true } 
+                    locKey="MangaDetailScreen.title" 
+                    children ={ <Text style={ styles.title_header }>{manga.comicIntro.infoName}</Text> }
+                />
 
                 {/* button next chapter */}
                 <View style={ styles.nextChapterContainer }>
                     {/* button back*/}
                     <TouchableOpacity 
                         disabled={ disableButtonBackChapter }
-                        onPress={()=>{}}
+                        onPress={this.onBackChapterPressed()}
                     >
                         <MaterialCommunityIcons name="chevron-left-box" style={[styles.iconBackNextChapter, disableButtonBackChapter ? styles.iconDisable : styles.iconEnable]}/>
                     </TouchableOpacity>
@@ -84,7 +98,7 @@ export class MangaDetailScreen extends PureComponent {
                     {/* button next */}
                     <TouchableOpacity 
                         disabled={ disableButtonNextChapter }
-                        onPress={()=>{}}
+                        onPress={this.onNextChapterPressed()}
                     >
                         <MaterialCommunityIcons name="chevron-right-box" style={[styles.iconBackNextChapter, disableButtonNextChapter ? styles.iconDisable : styles.iconEnable]}/>
                     </TouchableOpacity>

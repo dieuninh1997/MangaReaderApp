@@ -12,7 +12,7 @@ import styles from 'styles/components/GlobalHeader';
 
 
 export const GlobalHeader = (props) => {
-    const { showLeftButton, showRightButton, showSearchButton, locKey } = props;
+    const { showLeftButton, showRightButton, showSearchButton, locKey, children } = props;
 
     return (
         <SafeAreaView>
@@ -30,11 +30,13 @@ export const GlobalHeader = (props) => {
                 {/* Seperator  */}
                 <View style={ styles.separator }>
                     {
-                        locKey ? (
-                            <GlobalLoc locKey={ locKey } style={ styles.titleTextStyle } />
-                        ) : (
-                            null
-                    )}
+                        children
+                        // locKey ? (
+                        //     <GlobalLoc locKey={ locKey } style={ styles.titleTextStyle } />
+                        // ) : (
+                        //     null
+                        // )
+                    }
                     
                 </View>
 
@@ -57,6 +59,7 @@ GlobalHeader.propTypes = {
     showRightButton: PropTypes.bool,//setting
     showSearchButton: PropTypes.bool,//search
     locKey: PropTypes.string, // Optional
+    children: PropTypes.object
 };
 
 
