@@ -9,6 +9,7 @@ export default ScaledSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         paddingVertical: Sizes.s1,
+        backgroundColor: Colors.lightenPrimary,
     },
 
     iconBackNextChapter: {
@@ -33,4 +34,50 @@ export default ScaledSheet.create({
         width: width,
         height: height,
     },
+
+    //selector chapter
+    selectorChapterContainer: {
+        backgroundColor: Colors.button,
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingLeft: Sizes.s2,
+    },
+
+    viewBtnFilter: {
+        marginRight: '10@s',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+    },
+
+    btnFilter: {
+        color: '#FFF',
+        fontSize: '12@s'
+    },
+
+    viewButtonFilter: {
+        alignItems: 'flex-start',
+        justifyContent: 'flex-start',
+        flexDirection: 'row',
+    },
+
+    viewDropDown: {
+        width: '90@s',
+        backgroundColor: Colors.gray,
+        borderColor: Colors.primary,
+        borderWidth: '1@s',
+    },
+
+    dropDownTextStyle: {
+        fontSize: '12@s',
+        color: Colors.darkText,
+        backgroundColor: Colors.primary,
+        textAlign: 'center'
+    },
+
+    dropDownTextHighlightStyle: {
+        fontSize: '12@s',
+        color: Colors.active,
+    },
+
 });

@@ -36,7 +36,10 @@ export class MangaScreen extends PureComponent {
     }
 
     onChapterPressed(chapter) {
-        navigate('MangaDetailScreen', { chapter: chapter })
+        const { navigation } = this.props;
+        const id = navigation.getParam('id'); 
+        
+        navigate('MangaDetailScreen', { id: id, chapter: chapter })
     }
 
     renderItemChapter({item: chapter}) {
