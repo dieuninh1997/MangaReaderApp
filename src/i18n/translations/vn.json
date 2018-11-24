@@ -76,7 +76,8 @@
     },
 
     "MangaDetailScreen": {
-        "title": ""
+        "title": "",
+        "alert_end_chapter": "Không còn trang sau"
     }
 
 }

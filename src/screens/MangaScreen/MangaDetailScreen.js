@@ -1,7 +1,7 @@
 import React from 'react';
 import PureComponent from 'pure-component';
 import { connect } from 'react-redux';
-import { View, Text, TextInput, ScrollView, FlatList, Image, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, ScrollView, FlatList, Image, TouchableOpacity, Alert } from 'react-native';
 import { setLocale } from 'react-native-redux-i18n';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import _ from 'lodash';
@@ -17,13 +17,14 @@ import I18n from 'i18n';
 import truyenConGai from '../../db/truyenConGai';
 import truyenConTrai from '../../db/truyenConTrai';
 import truyenRomance from '../../db/truyenRomance';
-
+import { navigate } from 'services/NavigationService';
+import GlobalService from 'services/GlobalService';
 
 import styles from 'styles/screens/MangaScreen/MangaDetailScreen';
 
 export class MangaDetailScreen extends PureComponent {
     state = {
-        disableButtonBackChapter: true,
+        disableButtonBackChapter: false,
         disableButtonNextChapter: false,
         type : 'Select chapter'
     };
@@ -33,26 +34,59 @@ export class MangaDetailScreen extends PureComponent {
     }
 
     _onPressOrderTypeItem(item) {
-        this.setState({ type: item.comicChapter });
-        console.log(this.state);
+        
     }
 
-    onNextChapterPressed() {
-        const { type } = this.state;
-        // if(type)
-    }
+    onChapterPressed(type) {
+        const { navigation } = this.props;
+        const chapter = navigation.getParam('chapter'); 
+        const dataId = navigation.getParam('dataId');    
+        const mangaId = navigation.getParam('mangaId');    
+        let data = [];
+        switch(dataId) {
+            case 0:
+                data=truyenConGai;
+                break;
+            case 1:     
+                data=truyenConTrai;
+                break;
+            case 3: 
+                data=truyenRomance;
+                break;
+        }
+        const manga =  _.find(data, { 'id': mangaId });
+        const chapters = manga.comicChapters;
+        let indexCur = _.findIndex(chapters, { 'comicChapter': chapter.comicChapter });
+        // console.log('indexCur '+indexCur);
+        // console.log(type);
 
-    onBackChapterPressed() {
 
+        if (type === 'back') {//next
+            if (indexCur + 1 < chapters.length ){
+                const nextChapter = chapters[indexCur+1];
+                navigate('MangaDetailScreen', { dataId: dataId, mangaId: manga.id, chapter: nextChapter })
+            }
+            else {
+                GlobalService.showErrorToast(I18n.t('MangaDetailScreen.alert_end_chapter'));
+            }
+        } else {
+            if (indexCur - 1 >= 0 ){
+                const backChapter = chapters[indexCur-1];
+                navigate('MangaDetailScreen', { dataId: dataId, mangaId: manga.id, chapter: backChapter })
+            }
+            else {
+                GlobalService.showErrorToast(I18n.t('MangaDetailScreen.alert_end_chapter'));
+            }
+        }
     }
 
     render() {
         const { disableButtonBackChapter, disableButtonNextChapter } = this.state;        
         const { navigation } = this.props;
-
         const chapter = navigation.getParam('chapter'); 
         const dataId = navigation.getParam('dataId');
         const mangaId = navigation.getParam('mangaId');
+
 
         let data = [];
         switch(dataId) {
@@ -69,14 +103,14 @@ export class MangaDetailScreen extends PureComponent {
         const chapterImages = chapter.comicImages;
         const manga =  _.find(data, { 'id': mangaId });
         const chapters = manga.comicChapters;
-        
+
         let types = [];
         chapters.forEach(item => {
           types.push(item.comicChapter);
         });
 
         return (
-            <GlobalContainer>
+            <GlobalContainer style={ styles.container }>
                 {/* title */}
                 <GlobalHeader 
                     showLeftButton={ true } 
@@ -89,14 +123,15 @@ export class MangaDetailScreen extends PureComponent {
                     {/* button back*/}
                     <TouchableOpacity 
                         disabled={ disableButtonBackChapter }
-                        onPress={this.onBackChapterPressed()}
+                        onPress={()=>this.onChapterPressed('back')}
                     >
                         <MaterialCommunityIcons name="chevron-left-box" style={[styles.iconBackNextChapter, disableButtonBackChapter ? styles.iconDisable : styles.iconEnable]}/>
                     </TouchableOpacity>
 
                     {/* selector chapter */}
                     <View style={ styles.selectorChapterContainer }>
-                        <GlobalDropdown
+                        <Text style={ styles.nameChapter }>{chapter.comicChapter}</Text>
+                        {/* <GlobalDropdown
                             options={ types }
                             style={ styles.viewBtnFilter }
                             textStyle={ styles.btnFilter }
@@ -110,13 +145,13 @@ export class MangaDetailScreen extends PureComponent {
                             onSelect={(rowID) => {
                                 this._onPressOrderTypeItem(chapters[rowID])
                             }}
-                        />
+                        /> */}
                     </View>
 
                     {/* button next */}
                     <TouchableOpacity 
                         disabled={ disableButtonNextChapter }
-                        onPress={this.onNextChapterPressed()}
+                        onPress={()=>this.onChapterPressed('next')}
                     >
                         <MaterialCommunityIcons name="chevron-right-box" style={[styles.iconBackNextChapter, disableButtonNextChapter ? styles.iconDisable : styles.iconEnable]}/>
                     </TouchableOpacity>
@@ -131,11 +166,11 @@ export class MangaDetailScreen extends PureComponent {
                                 <PhotoView
                                     source={{ uri: img }}
                                     minimumZoomScale={0.5}
-                                    maximumZoomScale={3}
+                                    maximumZoomScale={10}
                                     androidScaleType="center"
                                     onLoad={() => console.log("Image loaded!")}
                                     style={ styles.image }
-                                    androidScaleType="fitXY"
+                                    androidScaleType="fitStart"
                                 />
                                 {/* <Image
                                     resizeMode={ 'cover' }

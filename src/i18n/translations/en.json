@@ -75,7 +75,9 @@
     },
 
     "MangaDetailScreen": {
-        "title": ""
+        "title": "",
+        "alert_end_chapter": "No more pages"
+
     }
 
 }

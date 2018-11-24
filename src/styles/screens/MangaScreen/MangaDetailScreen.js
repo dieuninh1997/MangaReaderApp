@@ -5,6 +5,10 @@ import { Dimensions } from 'react-native';
 const { width, height } = Dimensions.get('window');
 
 export default ScaledSheet.create({
+    container: {
+        marginBottom: Sizes.s1,
+    },
+
     title_header: {
         fontSize: FontSizes.p,
         color: Colors.info,
@@ -46,7 +50,12 @@ export default ScaledSheet.create({
         backgroundColor: Colors.button,
         alignItems: 'center',
         justifyContent: 'center',
-        paddingLeft: Sizes.s2,
+        paddingHorizontal: Sizes.s2,
+    },
+
+    nameChapter: {
+        fontSize: FontSizes.small,
+        color: Colors.info,
     },
 
     viewBtnFilter: {
