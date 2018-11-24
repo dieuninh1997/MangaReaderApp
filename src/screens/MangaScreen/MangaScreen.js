@@ -37,9 +37,10 @@ export class MangaScreen extends PureComponent {
 
     onChapterPressed(chapter) {
         const { navigation } = this.props;
-        const id = navigation.getParam('id'); 
-        
-        navigate('MangaDetailScreen', { id: id, chapter: chapter })
+        const dataId = navigation.getParam('dataId'); 
+        const manga = navigation.getParam('manga');
+
+        navigate('MangaDetailScreen', { dataId: dataId, mangaId: manga.id, chapter: chapter })
     }
 
     renderItemChapter({item: chapter}) {
@@ -74,9 +75,8 @@ export class MangaScreen extends PureComponent {
 
     render() {
         const { navigation } = this.props;
-        const id = navigation.getParam('id'); 
+        const manga = navigation.getParam('manga');
 
-        const manga = navigation.getParam('data');
         const info = manga.comicIntro;
         const chapters = manga.comicChapters;
         const thumbnai = { uri: info.infoImage };

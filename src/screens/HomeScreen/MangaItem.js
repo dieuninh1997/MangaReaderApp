@@ -8,11 +8,11 @@ import styles from 'styles/screens/HomeScreen/MangaItem';
 
 
 export const MangaItem = (props) => {
-    const { manga } = props;
+    const { manga, dataId } = props;
     const uri = { uri: manga.comicImage };
 
     return (
-        <TouchableOpacity onPress={()=>{ navigate('MangaScreen', { id: manga.id, data: manga })}}>
+        <TouchableOpacity onPress={()=>{ navigate('MangaScreen', { dataId: dataId, manga: manga })}}>
             <View style={ styles.container }>
                 {/* thumbnai */}
                 

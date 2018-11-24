@@ -95,7 +95,7 @@ export class HomeScreen extends PureComponent {
 
                             {/* list */}
                             <View style={ styles.list }>
-                                <MangaList data={ truyenConGai } />
+                                <MangaList data={ truyenConGai } dataId={0} />
                             </View>
                         </View>
 
@@ -107,7 +107,7 @@ export class HomeScreen extends PureComponent {
 
                             {/* list */}
                             <View style={ styles.list }>
-                                <MangaList data={ truyenConTrai } />
+                                <MangaList data={ truyenConTrai } dataId={1} />
                             </View>
                         </View>
 
@@ -119,7 +119,7 @@ export class HomeScreen extends PureComponent {
 
                             {/* list */}
                             <View style={ styles.list }>
-                                <MangaList data={ truyenRomance } />
+                                <MangaList data={ truyenRomance } dataId={2}/>
                             </View>
                         </View>
                     </View>

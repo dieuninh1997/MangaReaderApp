@@ -22,8 +22,9 @@ export class MangaList extends PureComponent {
     }
 
     renderItemManga({item: manga}) {
+        const { dataId } = this.props;
         return(
-           <MangaItem manga={ manga } />
+           <MangaItem manga={ manga } dataId={ dataId } />
         );
     }
 
@@ -50,7 +51,8 @@ export class MangaList extends PureComponent {
 
 
 MangaList.propTypes = {
-    data: PropTypes.array//list
+    data: PropTypes.array,//list
+    dataId: PropTypes.number
 };
 
 export default MangaList;

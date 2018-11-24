@@ -15,10 +15,11 @@ import GlobalButton from 'components/GlobalButton';
 import GlobalDropdown from 'components/GlobalDropdown';
 import I18n from 'i18n';
 import truyenConGai from '../../db/truyenConGai';
+import truyenConTrai from '../../db/truyenConTrai';
+import truyenRomance from '../../db/truyenRomance';
 
 
 import styles from 'styles/screens/MangaScreen/MangaDetailScreen';
-
 
 export class MangaDetailScreen extends PureComponent {
     state = {
@@ -46,13 +47,29 @@ export class MangaDetailScreen extends PureComponent {
     }
 
     render() {
+        const { disableButtonBackChapter, disableButtonNextChapter } = this.state;        
         const { navigation } = this.props;
+
         const chapter = navigation.getParam('chapter'); 
-        const id = navigation.getParam('id'); 
+        const dataId = navigation.getParam('dataId');
+        const mangaId = navigation.getParam('mangaId');
+
+        let data = [];
+        switch(dataId) {
+            case 0:
+                data=truyenConGai;
+                break;
+            case 1:     
+                data=truyenConTrai;
+                break;
+            case 3: 
+                data=truyenRomance;
+                break;
+        }
         const chapterImages = chapter.comicImages;
-        const { disableButtonBackChapter, disableButtonNextChapter } = this.state;
-        const manga =  _.find(truyenConGai, { 'id': id });
+        const manga =  _.find(data, { 'id': mangaId });
         const chapters = manga.comicChapters;
+        
         let types = [];
         chapters.forEach(item => {
           types.push(item.comicChapter);
