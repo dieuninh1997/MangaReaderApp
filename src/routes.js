@@ -109,7 +109,7 @@ export const Routes = createStackNavigator(
         MangaDetailScreen: MangaDetailScreen,
     },
     {
-        initialRouteName: 'HomeScreen',
+        initialRouteName: 'SplashScreen',
         headerMode: 'none',
         transitionConfig: transitionConfig,
         cardStyle: {

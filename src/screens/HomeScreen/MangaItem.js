@@ -12,7 +12,7 @@ export const MangaItem = (props) => {
     const uri = { uri: manga.comicImage };
 
     return (
-        <TouchableOpacity onPress={()=>{ navigate('MangaScreen', { id: manga.id })}}>
+        <TouchableOpacity onPress={()=>{ navigate('MangaScreen', { id: manga.id, data: manga })}}>
             <View style={ styles.container }>
                 {/* thumbnai */}
                 

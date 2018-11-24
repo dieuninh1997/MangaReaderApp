@@ -15,4 +15,15 @@ export default ScaledSheet.create({
         color: Colors.info,
         fontWeight: 'bold',
     },
+
+    screen: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
+    logoStyle: {
+        width: '100%',
+        height: '100%'
+    }
 });

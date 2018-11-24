@@ -158,7 +158,7 @@ class CrawlerData {
 
 let data = new CrawlerData();
 data.getChapterImages(
-"http://www.nettruyen.com/truyen-tranh/kaitou-alice/chap-1.1/197965")
+"http://www.nettruyen.com/truyen-tranh/katsute-mahou-shoujo-to-aku-wa-tekitai-shite/chap-5/422344")
 .then(data=> console.log(data));
 
 

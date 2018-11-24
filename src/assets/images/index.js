@@ -11,4 +11,6 @@ export default {
         ic_balloons: require('./menu/ic_balloons.png'),
     },
     background: require('./background.png'),
+    welcome: require('./welcome.gif'),
+    original: require('./original.gif'),
 };

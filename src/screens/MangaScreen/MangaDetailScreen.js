@@ -111,7 +111,7 @@ export class MangaDetailScreen extends PureComponent {
                         return (
                             <View style={ styles.imageContainer } key={ index }>
                                 <Image
-                                    resizeMode={ 'center' }
+                                    resizeMode={ 'cover' }
                                     style={ styles.image }
                                     source={{ uri: img }}
                                 />

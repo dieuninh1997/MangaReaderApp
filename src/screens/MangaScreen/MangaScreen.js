@@ -75,7 +75,8 @@ export class MangaScreen extends PureComponent {
     render() {
         const { navigation } = this.props;
         const id = navigation.getParam('id'); 
-        const manga = _.find(truyenConGai, { 'id': id });
+
+        const manga = navigation.getParam('data');
         const info = manga.comicIntro;
         const chapters = manga.comicChapters;
         const thumbnai = { uri: info.infoImage };
