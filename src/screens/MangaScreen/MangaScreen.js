@@ -85,8 +85,11 @@ export class MangaScreen extends PureComponent {
         return (
             <GlobalContainer>
                 {/* header */}
-                <GlobalHeader showLeftButton={ true } showRightButton={ true }/>
-                
+                <GlobalHeader 
+                    showLeftButton={ true } 
+                    showRightButton={ true }
+                    children ={ <Text style={ styles.title_header }>{info.infoName}</Text> }
+                />
                 <View style={ styles.container }>
                     {/* tom tat truyen  */}
                     <View style={ styles.truyen_container }>
@@ -175,7 +178,7 @@ export class MangaScreen extends PureComponent {
                                 </View>
                             </View>
                         ) : (
-                            <View>
+                            <View style={ styles.tabListChapterContainer }>
                                 <View style={ styles.headerItemChapter }>
                                 {/* danh sach chap */}
                                     <GlobalLoc locKey="MangaScreen.soChuong" style={ styles.headerItem_soChuong } />

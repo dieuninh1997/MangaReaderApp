@@ -11,6 +11,12 @@ export default ScaledSheet.create({
         marginBottom: Sizes.s2,
     },
 
+    title_header: {
+        fontSize: FontSizes.p,
+        color: Colors.info,
+        textAlign: 'center',
+    },
+
     truyen_container: {
         flexDirection: 'row',
         height: height * 0.3,
@@ -171,7 +177,7 @@ export default ScaledSheet.create({
 
     menuTabContainer: {
         flexDirection: 'row',
-        backgroundColor: Colors.primary
+        backgroundColor: Colors.primary,
     },
 
     menuTabItem: {
@@ -192,5 +198,9 @@ export default ScaledSheet.create({
         color: Colors.lightBackground,
         paddingLeft: '5@s',
         fontSize: '14@s'
+    },
+
+    tabListChapterContainer: {
+        flex: 1,
     }
 });

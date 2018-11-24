@@ -5,10 +5,6 @@ import { Dimensions } from 'react-native';
 const { width, height } = Dimensions.get('window');
 
 export default ScaledSheet.create({
-    container: {
-        marginBottom: Sizes.s1,
-    },
-
     title_header: {
         fontSize: FontSizes.p,
         color: Colors.info,

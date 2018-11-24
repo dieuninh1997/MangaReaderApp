@@ -110,7 +110,7 @@ export class MangaDetailScreen extends PureComponent {
         });
 
         return (
-            <GlobalContainer style={ styles.container }>
+            <GlobalContainer>
                 {/* title */}
                 <GlobalHeader 
                     showLeftButton={ true } 
