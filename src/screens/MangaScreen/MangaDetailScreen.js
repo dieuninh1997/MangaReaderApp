@@ -5,6 +5,7 @@ import { View, Text, TextInput, ScrollView, FlatList, Image, TouchableOpacity } 
 import { setLocale } from 'react-native-redux-i18n';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import _ from 'lodash';
+import PhotoView from 'react-native-photo-view';
 
 import GlobalContainer from 'components/GlobalContainer';
 import GlobalLoc from 'components/GlobalLoc';
@@ -110,11 +111,20 @@ export class MangaDetailScreen extends PureComponent {
                     {chapterImages.map((img, index)=>{
                         return (
                             <View style={ styles.imageContainer } key={ index }>
-                                <Image
+                                <PhotoView
+                                    source={{ uri: img }}
+                                    minimumZoomScale={0.5}
+                                    maximumZoomScale={3}
+                                    androidScaleType="center"
+                                    onLoad={() => console.log("Image loaded!")}
+                                    style={ styles.image }
+                                    androidScaleType="fitXY"
+                                />
+                                {/* <Image
                                     resizeMode={ 'cover' }
                                     style={ styles.image }
                                     source={{ uri: img }}
-                                />
+                                /> */}
                             </View>
                         )
                     })}
