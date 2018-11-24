@@ -3,6 +3,7 @@ import { Colors, FontSizes, Sizes } from 'styles/variables';
 
 
 export default ScaledSheet.create({
+
     viewIconSearch: {
         justifyContent: 'center',
         alignItems: 'center',

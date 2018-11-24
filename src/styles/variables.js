@@ -6,7 +6,7 @@ export const Colors = {
     lightenPrimary: '#cedcff',
     secondary: '#7c8580',
     lightenSecondary: '#dce2e0',
-    warning: '#f3c12e',
+    warning: '#e63332',
     info: '#FFFFFF',
     danger: '#ff3600',
     link: '#265799',

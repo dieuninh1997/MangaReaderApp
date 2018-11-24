@@ -52,7 +52,7 @@ export class MangaScreen extends PureComponent {
                 <View style={ styles.rowItemChapter }>
                     <Text style={ styles.item_soChuong }>{ chapter.comicChapter }</Text>
                     <Text style={ styles.item_capNhat }>{ chapter.comicDateUpdate }</Text>
-                    <Text style={ styles.item_luotXem }>{ chapter.comicView }</Text>
+                    {/* <Text style={ styles.item_luotXem }>{ chapter.comicView }</Text> */}
                 </View>
             </TouchableHighlight>
         );
@@ -183,7 +183,7 @@ export class MangaScreen extends PureComponent {
                                 {/* danh sach chap */}
                                     <GlobalLoc locKey="MangaScreen.soChuong" style={ styles.headerItem_soChuong } />
                                     <GlobalLoc locKey="MangaScreen.capNhat" style={ styles.headerItem_capNhat } />
-                                    <GlobalLoc locKey="MangaScreen.luotXem" style={ styles.headerItem_luotXem } />
+                                    {/* <GlobalLoc locKey="MangaScreen.luotXem" style={ styles.headerItem_luotXem } /> */}
                                 </View>
 
                                 <FlatList
@@ -195,11 +195,6 @@ export class MangaScreen extends PureComponent {
                         )
                     }
                     </View>
-                    
-
-                    
-
-                    
                 </View>
             </GlobalContainer>
         );

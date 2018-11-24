@@ -13,7 +13,9 @@ import SplashScreen from 'screens/SplashScreen/SplashScreen';
 
 //Home
 import HomeScreen from 'screens/HomeScreen/HomeScreen';
-// import MangaComponent from 'screens/HomeScreen/MangaComponent';
+
+//NewUpdateScreen
+import NewUpdateScreen from 'screens/NewUpdateScreen/NewUpdateScreen';
 
 //Manga
 import MangaScreen from 'screens/MangaScreen/MangaScreen';
@@ -80,7 +82,8 @@ export const Routes = createStackNavigator(
         SplashScreen: SplashScreen,
 
         HomeScreen: HomeScreen,
-        // MangaComponent: MangaComponent,
+        
+        NewUpdateScreen: NewUpdateScreen,
 
         WebViewScreen: WebViewScreen,
 

@@ -19,8 +19,6 @@ import styles from 'styles/screens/SearchScreen/SearchScreen';
 export class SearchScreen extends PureComponent {
     constructor(props) {
         super(props);
-       
-
     }
 
     
@@ -32,7 +30,7 @@ export class SearchScreen extends PureComponent {
                 <GlobalHeader 
                     showLeftButton={ true }
                     showRightButton={ true }  
-                    locKey="SearchScreen.title"
+                    children ={ <GlobalLoc style={ styles.title_header } locKey="SearchScreen.title"/> }
                 />
 
                 {/* input search text */}
@@ -46,7 +44,9 @@ export class SearchScreen extends PureComponent {
                         style={ styles.searchButton }    
                         onPress={()=>{}}
                     >
+                    <View style={ styles.timkiemView }>
                         <GlobalLoc locKey="SearchScreen.searchButton"/>
+                    </View>
                     </TouchableOpacity>
                 </View>
 
@@ -58,7 +58,9 @@ export class SearchScreen extends PureComponent {
                     <View style={ styles.titleSearchHistoryContainer }>
                         <GlobalLoc locKey="SearchScreen.searchHistory" style={ styles.title_searchHistory }/>
                         <TouchableOpacity>
-                            <MaterialCommunityIcons name="delete-outline" style={ styles.clearHistoryIcon }/>
+                            <View style={ styles.deleteView }>
+                                <MaterialCommunityIcons name="delete-outline" style={ styles.clearHistoryIcon }/>
+                            </View>
                         </TouchableOpacity>
                     </View>
                 </View>

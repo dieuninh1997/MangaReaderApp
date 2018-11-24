@@ -24,7 +24,7 @@ export class MangaList extends PureComponent {
     renderItemManga({item: manga}) {
         const { dataId } = this.props;
         return(
-           <MangaItem manga={ manga } dataId={ dataId } />
+           <MangaItem manga={ manga } direction={'horizontal'} dataId={ dataId } />
         );
     }
 

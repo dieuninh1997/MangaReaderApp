@@ -19,6 +19,12 @@ export default ScaledSheet.create({
         backgroundColor: Colors.info,
     },
 
+    title_header: {
+        fontSize: FontSizes.p,
+        color: Colors.info,
+        textAlign: 'center',
+    },
+
     inputContainer: {
         flexDirection: 'row',
         marginVertical: Sizes.s2,
@@ -65,8 +71,23 @@ export default ScaledSheet.create({
         color: Colors.lightText,
     },
 
+    timkiemView: {
+        backgroundColor: Colors.lightenPrimary,
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: Sizes.s1,
+    },
+
+    deleteView: {
+        width: Sizes.s6,
+        height: Sizes.s6,
+        borderRadius: Sizes.s3,
+        backgroundColor: Colors.warning,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
     clearHistoryIcon: {
         fontSize: FontSizes.h3,
-        color: Colors.lightText,
+        color: Colors.info,
     }
 });

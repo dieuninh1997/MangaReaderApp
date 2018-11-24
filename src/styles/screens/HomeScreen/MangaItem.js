@@ -10,6 +10,20 @@ export default ScaledSheet.create({
         height: 250,
         width: 170,
     },
+
+    containerHorizontal: {
+        padding: Sizes.s1,
+        flexDirection: 'row',
+        backgroundColor: 'white',
+        height: 150,
+        width: '100%',
+    },
+
+    infoMangaHorizontal: {
+        flex: 3,
+        marginLeft: Sizes.s1,  
+    },
+
     mangaContainer: {
        flex: 1,
     },

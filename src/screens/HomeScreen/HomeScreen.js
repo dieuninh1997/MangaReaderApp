@@ -24,6 +24,7 @@ export class HomeScreen extends PureComponent {
         super(props);
         this.onMenuBrowserButtonPressed = this.onMenuBrowserButtonPressed.bind(this);
         this.goToDetailScreen = this.goToDetailScreen.bind(this);
+        this.openCapNhatMoi = this.openCapNhatMoi.bind(this);
     }
 
     onMenuBrowserButtonPressed() {
@@ -32,6 +33,10 @@ export class HomeScreen extends PureComponent {
 
     goToDetailScreen(truyen) {
         // navigate('DetailScreen', {truyen: truyen});
+    }
+
+    openCapNhatMoi() {
+        navigate('NewUpdateScreen');
     }
 
 
@@ -72,7 +77,7 @@ export class HomeScreen extends PureComponent {
                         </TouchableOpacity>
 
                         {/* Cap nhat moi */}
-                        <TouchableOpacity onPress={()=>{}}>
+                        <TouchableOpacity onPress={this.openCapNhatMoi}>
                             <View style={[ styles.menuButtonContainer, styles.menuCapNhatMoi ]}>
                                 <View style={ styles.menuImageContainer }>
                                     <Image style={ styles.menuImage } source={ Images.menu['ic_new'] } />
