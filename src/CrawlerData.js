@@ -158,13 +158,13 @@ class CrawlerData {
 
 let data = new CrawlerData();
 data.getChapterImages(
-"http://www.nettruyen.com/truyen-tranh/one-kiss-a-day/chap-1/418429")
+"http://www.nettruyen.com/truyen-tranh/kaitou-alice/chap-1.1/197965")
 .then(data=> console.log(data));
 
 
-// data.getChapters("http://www.nettruyen.com/truyen-tranh/one-kiss-a-day").then(data=>{console.log(data)});
+// data.getChapters("http://www.nettruyen.com/truyen-tranh/kaitou-alice").then(data=>{console.log(data)});
 
-// data.getTruyen("http://www.nettruyen.com/truyen-con-gai?page=4").then(data=>{
+// data.getTruyen("http://www.nettruyen.com/truyen-con-trai?page=3").then(data=>{
 //     console.log(data);
 // });
 

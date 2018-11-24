@@ -103,7 +103,7 @@ export const Routes = createStackNavigator(
         FeedbackScreen: FeedbackScreen, 
         AboutUsScreen: AboutUsScreen,
 
-        SearchScreen,
+        SearchScreen: SearchScreen,
 
         MangaScreen: MangaScreen,
         MangaDetailScreen: MangaDetailScreen,
