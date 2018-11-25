@@ -8,7 +8,6 @@ export default ScaledSheet.create({
     container: {
         flex: 1,
         padding: Sizes.s2,
-        marginBottom: Sizes.s2,
     },
 
     title_header: {
@@ -202,5 +201,18 @@ export default ScaledSheet.create({
 
     tabListChapterContainer: {
         flex: 1,
+    },
+
+    
+    //button follow
+    buttonContainer: {
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    buttonFollow: {
+        backgroundColor: Colors.active,
+        borderBottomLeftRadius: 0,
+        borderBottomRightRadius: 0,
     }
 });

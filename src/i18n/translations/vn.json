@@ -72,7 +72,11 @@
         "capNhat": "Cập nhật",
         "luotXem": "Lượt xem",
         "menu": "MỤC LỤC",
-        "content": "GIỚI THIỆU"
+        "content": "GIỚI THIỆU",
+        "alert_start_following": "Theo dõi thành công",
+        "alert_stop_following": "Hủy theo dõi",
+        "button_follow": "Theo dõi",
+        "following": "Đã theo dõi"
     },
 
     "MangaDetailScreen": {

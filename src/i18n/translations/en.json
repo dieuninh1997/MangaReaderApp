@@ -71,13 +71,16 @@
         "capNhat": "Date",
         "luotXem": "View",
         "menu": "MENU",
-        "content": "INTRODUCE"
+        "content": "INTRODUCE",
+        "alert_start_following": "Follow successfully",
+        "alert_stop_following": "Unfollow",
+        "button_follow": "Follow",
+        "following": "Following"
     },
 
     "MangaDetailScreen": {
         "title": "",
-        "alert_end_chapter": "No more pages"
-
+        "alert_end_chapter": "No more pages",
     },
 
     "MangaItem": {

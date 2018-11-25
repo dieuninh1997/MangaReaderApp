@@ -1,7 +1,7 @@
 import React from 'react';
 import PureComponent from 'pure-component';
 import { connect } from 'react-redux';
-import { View, Text, TextInput, ScrollView, Image, TouchableHighlight, Animated, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, ScrollView, Image, TouchableHighlight, Animated, FlatList, TouchableOpacity, AsyncStorage  } from 'react-native';
 import { setLocale } from 'react-native-redux-i18n';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -18,6 +18,7 @@ import I18n from 'i18n';
 import  MangaList  from 'screens/HomeScreen/MangaList';
 import truyenConGai from './../../db/truyenConGai';
 import { navigate } from 'services/NavigationService';
+import GlobalService from 'services/GlobalService';
 
 import styles from 'styles/screens/MangaScreen/MangaScreen';
 
@@ -25,7 +26,9 @@ import styles from 'styles/screens/MangaScreen/MangaScreen';
 export class MangaScreen extends PureComponent {
 
     state = {
-        contentActive: false
+        contentActive: false,
+        isFollowing: false,
+        listFollowing: []
     };
 
     constructor(props){
@@ -33,6 +36,44 @@ export class MangaScreen extends PureComponent {
         this.renderItemChapter = this.renderItemChapter.bind(this);
         this.mangaKeyExtractor = this.mangaKeyExtractor.bind(this);
         this.onChapterPressed = this.onChapterPressed.bind(this);
+        this.onFollowButtonPressed = this.onFollowButtonPressed.bind(this);
+    }
+
+    // async componentWillMount(){
+    //     const { navigation } = this.props;
+    //     const manga = navigation.getParam('manga');
+
+    //     let value = await AsyncStorage.getItem('listFollowing'); 
+    //     // console.log(value);
+    //     if(value && value.length > 0){
+    //         this.setState({listFollowing: value});
+    //        let index = _.findIndex(value, { 'id': manga.id });
+    //        if(index != -1){
+    //            this.setState({isFollowing: true});
+    //        }
+    //     }
+    // } 
+
+    onFollowButtonPressed() {
+        // const { isFollowing, listFollowing } = this.state;
+        // const { navigation } = this.props;
+        // const manga = navigation.getParam('manga');
+        // console.log(manga);
+
+        // if(!isFollowing){
+        //     this.setState({isFollowing: true});
+        //    await AsyncStorage.setItem('listFollowing', {...listFollowing, manga});
+        //     GlobalService.showErrorToast(I18n.t('MangaScreen.alert_start_following'));
+            
+        // }else{
+        //     this.setState({isFollowing: false});
+        //     GlobalService.showErrorToast(I18n.t('MangaScreen.alert_stop_following'));
+        // }
+        // let db = await AsyncStorage.getItem('listFollowing'); 
+        // console.log('list')
+        // console.log(listFollowing);
+        // console.log('db');
+        // console.log(db);
     }
 
     onChapterPressed(chapter) {
@@ -74,6 +115,7 @@ export class MangaScreen extends PureComponent {
     }
 
     render() {
+        const { isFollowing } = this.state;
         const { navigation } = this.props;
         const manga = navigation.getParam('manga');
 
@@ -195,6 +237,16 @@ export class MangaScreen extends PureComponent {
                         )
                     }
                     </View>
+                </View>
+
+                 {/* theo doi button */}
+                 <View style={ styles.buttonContainer }>
+                    <GlobalButton
+                        style={ styles.buttonFollow }
+                        type="outlinePrimary"
+                        locKey={isFollowing ? "MangaScreen.following" : "MangaScreen.button_follow"}
+                        onPress={this.onFollowButtonPressed }
+                    />
                 </View>
             </GlobalContainer>
         );
