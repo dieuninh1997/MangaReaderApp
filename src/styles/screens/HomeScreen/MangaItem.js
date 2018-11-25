@@ -17,12 +17,15 @@ export default ScaledSheet.create({
         backgroundColor: 'white',
         height: 150,
         width: '100%',
+        borderBottomWidth: Sizes.s1,
+        borderBottomColor: Colors.lightBackground
     },
 
     infoMangaHorizontal: {
         flex: 3,
         marginLeft: Sizes.s1,  
         justifyContent: 'space-between',
+        paddingVertical: Sizes.s2,
     },
 
     mangaContainer: {
@@ -55,6 +58,12 @@ export default ScaledSheet.create({
     manga_name: {
         color: Colors.darkText,
         fontSize: FontSizes.small,
+    },
+
+    subText: {
+        color: Colors.lightText,
+        fontSize: FontSizes.extraSmall,
+        marginRight: Sizes.s2,
     }
 
 });

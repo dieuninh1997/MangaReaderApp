@@ -38,6 +38,7 @@ export class NewUpdateScreen extends PureComponent {
                 {/* header */}
                 <GlobalHeader 
                     showLeftButton={ true } 
+                    showRightButton={ true }
                     children ={ <GlobalLoc style={ styles.title_header } locKey="HomeScreen.menuCapNhatMoi" /> } />
 
                 <View style={{flex: 1}}>

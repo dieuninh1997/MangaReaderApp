@@ -17,6 +17,7 @@ import I18n from 'i18n';
 import truyenConGai from '../../db/truyenConGai';
 import truyenConTrai from '../../db/truyenConTrai';
 import truyenRomance from '../../db/truyenRomance';
+import truyenCapNhat from '../../db/truyenCapNhat';
 import { navigate } from 'services/NavigationService';
 import GlobalService from 'services/GlobalService';
 
@@ -52,6 +53,9 @@ export class MangaDetailScreen extends PureComponent {
                 break;
             case 3: 
                 data=truyenRomance;
+                break;
+            case 4: 
+                data=truyenCapNhat;
                 break;
         }
         const manga =  _.find(data, { 'id': mangaId });
@@ -99,6 +103,9 @@ export class MangaDetailScreen extends PureComponent {
             case 3: 
                 data=truyenRomance;
                 break;
+            case 4: 
+                data=truyenCapNhat;
+                break;
         }
         const chapterImages = chapter.comicImages;
         const manga =  _.find(data, { 'id': mangaId });
@@ -130,7 +137,13 @@ export class MangaDetailScreen extends PureComponent {
 
                     {/* selector chapter */}
                     <View style={ styles.selectorChapterContainer }>
-                        <Text style={ styles.nameChapter }>{chapter.comicChapter}</Text>
+                        <Text 
+                            numberOfLines={1} 
+                            ellipsizeMode='tail'
+                            style={ styles.nameChapter }
+                        >
+                            {chapter.comicChapter}
+                        </Text>
                         {/* <GlobalDropdown
                             options={ types }
                             style={ styles.viewBtnFilter }

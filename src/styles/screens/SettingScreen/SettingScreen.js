@@ -3,6 +3,11 @@ import { Colors, FontSizes, Sizes } from 'styles/variables';
 
 
 export default ScaledSheet.create({
+    title_header: {
+        fontSize: FontSizes.p,
+        color: Colors.info,
+        textAlign: 'center',
+    },
     title: { 
         fontSize: FontSizes.h5,
         fontWeight: 'bold', 

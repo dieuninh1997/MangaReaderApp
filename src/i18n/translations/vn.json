@@ -78,6 +78,12 @@
     "MangaDetailScreen": {
         "title": "",
         "alert_end_chapter": "Không còn trang sau"
+    },
+
+    "MangaItem": {
+        "updateToChapter": "Cập nhật đến: {{nameChapter}}",
+        "updateTime": "Update: {{time}}",
+        "views": "{{number}} lượt đọc"
     }
 
 }

@@ -56,7 +56,10 @@ export class SettingScreen extends PureComponent {
         return (
             <GlobalContainer style={ styles.container }>
                 {/* title */}
-                <GlobalHeader showLeftButton={ true } locKey="SettingScreen.title"/>
+                <GlobalHeader 
+                    showLeftButton={ true } 
+                    children ={ <GlobalLoc style={ styles.title_header }  locKey="SettingScreen.title" /> }
+                />
               
                 <ScrollView>
                     {/* language setting */}

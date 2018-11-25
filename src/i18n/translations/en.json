@@ -78,6 +78,13 @@
         "title": "",
         "alert_end_chapter": "No more pages"
 
+    },
+
+    "MangaItem": {
+        "updateToChapter": "Update to: {{nameChapter}}",
+        "updateTime": "Update: {{time}}",
+        "views": "{{number}} views"
     }
+    
 
 }

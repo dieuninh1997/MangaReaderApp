@@ -43,6 +43,7 @@ export default ScaledSheet.create({
 
     //selector chapter
     selectorChapterContainer: {
+        flex: 1,
         backgroundColor: Colors.button,
         alignItems: 'center',
         justifyContent: 'center',
