@@ -22,6 +22,7 @@ export default ScaledSheet.create({
     infoMangaHorizontal: {
         flex: 3,
         marginLeft: Sizes.s1,  
+        justifyContent: 'space-between',
     },
 
     mangaContainer: {

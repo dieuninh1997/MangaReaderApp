@@ -34,13 +34,13 @@ export class NewUpdateScreen extends PureComponent {
     render() {
 
         return (
-            <GlobalContainer>
+            <GlobalContainer style={ styles.container }>
                 {/* header */}
                 <GlobalHeader 
                     showLeftButton={ true } 
                     children ={ <GlobalLoc style={ styles.title_header } locKey="HomeScreen.menuCapNhatMoi" /> } />
 
-                <View>
+                <View style={{flex: 1}}>
                     <FlatList
                         data={ truyenCapNhat }
                         renderItem={ this.renderItemManga }

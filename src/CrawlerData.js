@@ -158,13 +158,13 @@ class CrawlerData {
 
 let data = new CrawlerData();
 data.getChapterImages(
-"http://www.nettruyen.com/truyen-tranh/katsute-mahou-shoujo-to-aku-wa-tekitai-shite/chap-5/422344")
+"http://www.nettruyen.com/truyen-tranh/shinka-no-mi-shiranai-uchi-ni-kachigumi-jinsei/chap-1/365659")
 .then(data=> console.log(data));
 
 
-// data.getChapters("http://www.nettruyen.com/truyen-tranh/kaitou-alice").then(data=>{console.log(data)});
+// data.getChapters("http://www.nettruyen.com/truyen-tranh/shinka-no-mi-shiranai-uchi-ni-kachigumi-jinsei").then(data=>{console.log(data)});
 
-// data.getTruyen("http://www.nettruyen.com/truyen-con-trai?page=3").then(data=>{
+// data.getTruyen("http://www.nettruyen.com/?page=3").then(data=>{
 //     console.log(data);
 // });
 
