@@ -1,6 +1,8 @@
 # MangaReaderApp
 Ứng dụng đọc truyện tranh online sử dụng React-native
 
+## Features
+-
 
 ## Environment
 Current dev's environment:
@@ -24,3 +26,4 @@ Using XCode
 
 ```npm run ios```
 ```npm run android```
+
